@@ -48,7 +48,7 @@ SakuraList.prototype.update = function () {
     }
 }
 SakuraList.prototype.draw = function (cxt) {
-    for (var i = 0, len = this.list.length; i < 20; i++) {
+    for (var i = 0, len = this.list.length; i < 10; i++) {
         this.list[i].draw(cxt);
     }
 }
