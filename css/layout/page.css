@@ -1,7 +1,7 @@
 .page-container {
   width: 100%;
   height: auto;
-  background: var(--background-color-1);
+  background: rgba(153,204,153,0);
 }
 .page-container .page-main-content {
   display: flex;
