@@ -1,9 +1,8 @@
 .home-content-container {
-  background: rgba(255,255,255,0);
+  background: var(--background-color-1);
 }
 .home-content-container .home-post-list .home-post-item {
   position: relative;
-  background: rgba(255,255,255,0.8);
 }
 .home-content-container .home-post-list .home-post-item .post-sticky-box {
   position: absolute;

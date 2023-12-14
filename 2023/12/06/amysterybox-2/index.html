@@ -1,647 +1,1269 @@
 <!DOCTYPE html>
 <html lang="en">
+    <!-- title -->
+
+
+    
+
+<!-- keywords -->
+
+
+
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="keywords" content="夜航船，日记，做饭记录">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="FLUFFY LION">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="FLUFFY LION">
+    
+        <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
+    
+    <meta name="description" content="北京→柏林 经济舱">
     <meta name="description" content="楚子航又见到了雨夜里的迈巴赫，而这次他仍然是孤身一人。">
-    <meta name="author" content="Fluffy Lion">
+<meta property="og:type" content="article">
+<meta property="og:title" content="龙族&#x2F;源楚源">
+<meta property="og:url" content="http://namelessriver.github.com/2023/12/06/amysterybox-2/index.html">
+<meta property="og:site_name" content="鱼油纪年">
+<meta property="og:description" content="楚子航又见到了雨夜里的迈巴赫，而这次他仍然是孤身一人。">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-12-06T16:03:21.000Z">
+<meta property="article:modified_time" content="2023-12-06T16:05:34.971Z">
+<meta property="article:author" content="FLUFFY LION">
+<meta property="article:tag" content="亦有人造訪過這片原野">
+<meta name="twitter:card" content="summary">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="icon" href="/assets/lion.png">
     
-    <title>
-        
-            龙族/源楚源 |
-        
-        再會，謝謝所有的魚
-    </title>
-    
-<link rel="stylesheet" href="/css/style.css">
+    <title>龙族/源楚源 · 再會，謝謝所有的魚</title>
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+    (function (w) {
+        'use strict'
+        // rel=preload support test
+        if (!w.loadCSS) {
+            w.loadCSS = function () {}
+        }
+        // define on the loadCSS obj
+        var rp = (loadCSS.relpreload = {})
+        // rel=preload feature support test
+        // runs once and returns a function for compat purposes
+        rp.support = (function () {
+            var ret
+            try {
+                ret = w.document.createElement('link').relList.supports('preload')
+            } catch (e) {
+                ret = false
+            }
+            return function () {
+                return ret
+            }
+        })()
 
-    
-        <link rel="shortcut icon" href="/images/lion.png">
-    
-    
-<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+        // if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+        // then change that media back to its intended value on load
+        rp.bindMediaToggle = function (link) {
+            // remember existing media attr for ultimate state, or default to 'all'
+            var finalMedia = link.media || 'all'
 
-    
-<link rel="stylesheet" href="/font/css/regular.min.css">
+            function enableStylesheet() {
+                link.media = finalMedia
+            }
 
-    
-<link rel="stylesheet" href="/font/css/solid.min.css">
+            // bind load handlers to enable media
+            if (link.addEventListener) {
+                link.addEventListener('load', enableStylesheet)
+            } else if (link.attachEvent) {
+                link.attachEvent('onload', enableStylesheet)
+            }
 
-    
-<link rel="stylesheet" href="/font/css/brands.min.css">
+            // Set rel and non-applicable media type to start an async request
+            // note: timeout allows this to happen async to let rendering continue in IE
+            setTimeout(function () {
+                link.rel = 'stylesheet'
+                link.media = 'only x'
+            })
+            // also enable media after 3 seconds,
+            // which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+            setTimeout(enableStylesheet, 3000)
+        }
 
-    
-        
-            
-                
-<link rel="stylesheet" href="/css/custom-1.css">
+        // loop through link elements in DOM
+        rp.poly = function () {
+            // double check this to prevent external calls from running
+            if (rp.support()) {
+                return
+            }
+            var links = w.document.getElementsByTagName('link')
+            for (var i = 0; i < links.length; i++) {
+                var link = links[i]
+                // qualify links to those with rel=preload and as=style attrs
+                if (
+                    link.rel === 'preload' &&
+                    link.getAttribute('as') === 'style' &&
+                    !link.getAttribute('data-loadcss')
+                ) {
+                    // prevent rerunning on link
+                    link.setAttribute('data-loadcss', true)
+                    // bind listeners to toggle media back
+                    rp.bindMediaToggle(link)
+                }
+            }
+        }
 
-            
-        
-    
-    <script class="keep-theme-configurations">
-    const KEEP = window.KEEP || {}
-    KEEP.hexo_config = {"hostname":"namelessriver.github.com","root":"/","language":"en"}
-    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"再會，謝謝所有的魚","author":"Fluffy Lion","avatar":"/images/girl.jpg","logo":"/images/lion.png","favicon":"/images/lion.png"},"menu":{"Tags":"/tags","Books":"/books","Games":"/games","About":"/about"},"first_screen":{"enable":false,"background_img":"/images/OIP.jpg","background_img_dark":"/images/OIP.jpg","description":"你现在是一名永恒之人，||永远别再想起任何一个一般时空里的故人。","hitokoto":false},"social_contact":{"enable":false,"links":{"github":null,"weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"facebook":null,"email":null}},"scroll":{"progress_bar":false,"percent":false,"hide_header":false},"home":{"category":false,"tag":true,"announcement":null},"post":{"excerpt_description":true,"author_badge":{"enable":false,"level_badge":false,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":false,"excerpt_description":true},"datetime_format":"YYYY-MM-DD","copyright_info":false,"share":false,"reward":{"enable":false,"img_link":null,"text":null}},"code_block":{"tools":{"enable":false,"style":"default"},"highlight_theme":"default"},"toc":{"enable":false,"number":false,"expand_all":false,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":true,"preload":false},"comment":{"enable":true,"use":"valine","valine":{"appid":"u4mIZkTNUsJNr3qekDxQNg4e-MdYXbMMI","appkey":"EeBQXsUyvHQ7uSacnVCyiQRT","server_urls":"https://namelessriver.github.io/","placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.21"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":false},"cdn":{"enable":false,"provider":"jsdelivr"},"pjax":{"enable":false},"footer":{"since":2021,"word_count":false,"icp":{"enable":false,"record_code":null,"url":"https://beian.miit.gov.cn"},"site_deploy":{"enable":false,"provider":"github","url":null},"shields_style":{"enable":false,"custom":[{"link_url":null,"img_url":null}]}},"inject":{"enable":true,"css":["/css/custom-1.css"],"js":[null]},"root":"","version":"4.0.5"}
-    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
-    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
-    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original post title","author":"Original post author","link":"Original post link"}
-  </script>
-<meta name="generator" content="Hexo 6.3.0"></head>
+        // if unsupported, run the polyfill
+        if (!rp.support()) {
+            // run once at least
+            rp.poly()
 
+            // rerun poly on an interval until onload
+            var run = w.setInterval(rp.poly, 500)
+            if (w.addEventListener) {
+                w.addEventListener('load', function () {
+                    rp.poly()
+                    w.clearInterval(run)
+                })
+            } else if (w.attachEvent) {
+                w.attachEvent('onload', function () {
+                    rp.poly()
+                    w.clearInterval(run)
+                })
+            }
+        }
 
-<body>
-<div class="progress-bar-container">
-    
-
-    
-</div>
-
-
-<main class="page-container border-box">
-
-    <!-- home first screen  -->
-    
-
-    <!-- page content -->
-    <div class="page-main-content border-box">
-        <div class="page-main-content-top">
-            
-<header class="header-wrapper">
-
-    <div class="border-box header-content">
-        <div class="left border-box">
-            
-                <a class="logo-image border-box" href="/">
-                    <img src="/images/lion.png">
-                </a>
-            
-            <a class="site-name border-box" href="/">
-               再會，謝謝所有的魚
-            </a>
-        </div>
-
-        <div class="right border-box">
-            <div class="pc">
-                <ul class="menu-list">
-                    <li class="menu-item">
-                        <a class=""
-                           href="/"
-                        >HOME</a>
-                    </li>
-                    
-                        <li class="menu-item">
-                            <a class=""
-                               href="/tags"
-                            >TAGS</a>
-                        </li>
-                    
-                        <li class="menu-item">
-                            <a class=""
-                               href="/books"
-                            >BOOKS</a>
-                        </li>
-                    
-                        <li class="menu-item">
-                            <a class=""
-                               href="/games"
-                            >GAMES</a>
-                        </li>
-                    
-                        <li class="menu-item">
-                            <a class=""
-                               href="/about"
-                            >ABOUT</a>
-                        </li>
-                    
-                    
-                        <li class="menu-item search search-popup-trigger">
-                            <i class="fas search fa-search"></i>
-                        </li>
-                    
-                </ul>
-            </div>
-            <div class="mobile">
-                
-                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
-                
-                <div class="icon-item menu-bar">
-                    <div class="menu-bar-middle"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="header-drawer">
-        <ul class="drawer-menu-list">
-            <li class="drawer-menu-item flex-center">
-                <a class=""
-                   href="/"
-                >HOME</a>
-            </li>
-            
-                <li class="drawer-menu-item flex-center">
-                    <a class=""
-                       href="/tags"
-                    >TAGS</a>
-                </li>
-            
-                <li class="drawer-menu-item flex-center">
-                    <a class=""
-                       href="/books"
-                    >BOOKS</a>
-                </li>
-            
-                <li class="drawer-menu-item flex-center">
-                    <a class=""
-                       href="/games"
-                    >GAMES</a>
-                </li>
-            
-                <li class="drawer-menu-item flex-center">
-                    <a class=""
-                       href="/about"
-                    >ABOUT</a>
-                </li>
-            
-        </ul>
-    </div>
-
-    <div class="window-mask"></div>
-
-</header>
-
-
-        </div>
-
-        <div class="page-main-content-middle border-box">
-
-            <div class="main-content border-box">
-                
-
-                    
-<div class="fade-in-down-animation">
-    <div class="post-page-container border-box">
-        <div class="post-content-container border-box">
-            
-
-            <div class="post-content-bottom border-box">
-                
-                    <div class="post-title">
-                        龙族/源楚源
-                    </div>
-                
-
-                
-                    <div class="post-header border-box">
-                        
-                            <div class="avatar-box border-box">
-                                <img src="/images/girl.jpg">
-                            </div>
-                        
-                        <div class="info-box">
-                            <div class="author border-box">
-                                <span class="name">Fluffy Lion</span>
-                                
-                            </div>
-                            <div class="meta-info border-box">
-                                
-
-<div class="post-meta-info-container border-box post">
-    <div class="post-meta-info border-box">
-        
-
-        
-            <span class="meta-info-item post-create-date">
-                <i class="icon fa-solid fa-calendar-check"></i>&nbsp;
-                <span class="pc">2023-12-06</span>
-                <span class="mobile">2023-12-06 17:03</span>
-            </span>
-
-            <span class="meta-info-item post-update-date">
-                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="pc" data-updated="Wed Dec 06 2023 17:05:34 GMT+0100">2023-12-06</span>
-            </span>
-        
-
-        
-
-        
-            <span class="post-tag meta-info-item border-box">
-                <i class="icon fas fa-tags"></i>&nbsp;
-                <ul class="post-tag-ul">
-                    
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E4%BA%A6%E6%9C%89%E4%BA%BA%E9%80%A0%E8%A8%AA%E9%81%8E%E9%80%99%E7%89%87%E5%8E%9F%E9%87%8E/">亦有人造訪過這片原野</a></li>
-                        
-                    
-                </ul>
-            </span>
-        
-
-        
-        
-            <span class="meta-info-item post-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>2.3k Words</span>
-            </span>
-        
-        
-        
-    </div>
-
-    
-</div>
-
-                            </div>
-                        </div>
-                    </div>
-                
-
-                <div class="post-content keep-markdown-body">
-                    
-
-                    
-                </div>
-
-                
-
-                <div class="post-bottom-tags-and-share border-box">
-                    <div>
-                        
-                            <ul class="post-tags-box border-box">
-                                
-                                    <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E4%BA%A6%E6%9C%89%E4%BA%BA%E9%80%A0%E8%A8%AA%E9%81%8E%E9%80%99%E7%89%87%E5%8E%9F%E9%87%8E/">亦有人造訪過這片原野</a>
-                                    </li>
-                                
-                            </ul>
-                        
-                    </div>
-                    <div>
-                        
-                    </div>
-                </div>
-
-                
-
-                
-                    <div class="post-nav border-box">
-                        
-                            <div class="prev-post">
-                                <a class="prev"
-                                   rel="prev"
-                                   href="/2023/12/06/amysterybox-3/"
-                                   title="哈利波特/犬狼犬"
-                                >
-                                    <span class="left arrow-icon flex-center">
-                                        <i class="fas fa-chevron-left"></i>
-                                    </span>
-                                    <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">哈利波特/犬狼犬</span>
-                                        <span class="post-nav-item">Prev posts</span>
-                                    </span>
-                                </a>
-                            </div>
-                        
-                        
-                            <div class="next-post">
-                                <a class="next"
-                                   rel="next"
-                                   href="/2023/12/06/amysterybox-1/"
-                                   title="逆水寒/戚少商个人"
-                                >
-                                    <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">逆水寒/戚少商个人</span>
-                                        <span class="post-nav-item">Next posts</span>
-                                    </span>
-                                    <span class="right arrow-icon flex-center">
-                                        <i class="fas fa-chevron-right"></i>
-                                    </span>
-                                </a>
-                            </div>
-                        
-                    </div>
-                
-
-                
-                    
-
-
-    <div class="comments-container border-box">
-        <div id="comments-anchor" class="comment-area-title border-box">
-            <i class="fas fa-comments"></i>&nbsp;Comments
-        </div>
-        <div class="comment-plugin-fail border-box">
-    <span class="fail-tip">Comment plugin failed to load</span>
-    <button class="reload keep-button">Click to reload</button>
-</div>
-<div class="comment-plugin-loading flex-center border-box">
-    <i class="loading-icon fa-solid fa-spinner fa-spin"></i>
-    <span class="load-tip">Loading comment plugin</span>
-</div>
-<script data-pjax>
-  window.KeepCommentPlugin = {}
-  window.KeepCommentPlugin.hideLoading = () => {
-    const cplDom = document.querySelector('.comments-container .comment-plugin-loading')
-    cplDom.style.display = 'none'
-  }
-  window.KeepCommentPlugin.loadFailHandle = () => {
-    window.KeepCommentPlugin.hideLoading()
-    const cpfDom = document.querySelector('.comments-container .comment-plugin-fail')
-    cpfDom.style.display = 'flex'
-    cpfDom.querySelector('.reload').addEventListener('click', () => {
-      window.location.reload()
-    })
-  }
+        // commonjs
+        if (typeof exports !== 'undefined') {
+            exports.loadCSS = loadCSS
+        } else {
+            w.loadCSS = loadCSS
+        }
+    })(typeof global !== 'undefined' ? global : this)
 </script>
 
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+</style>
+
+    <link rel="preload" href="/css/style.css?v=20211217" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="/css/dark.css?v=20211217" as="style">
+    <link rel="stylesheet" href="/css/dark.css">
+    <link rel="stylesheet" href="/css/mobile.css?v=20211217" media="(max-width: 960px)">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js?v=20211217" as="script">
+    <link rel="preload" href="/scripts/dark.js?v=20211217" as="script">
+    <link rel="preload" href="/font/Oswald-Regular.ttf" as="font" crossorigin>
+    <link rel="preload" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" as="font" crossorigin>
+    <!-- algolia -->
+    
+    <!-- 百度统计  -->
+    
+    <!-- Google tag (gtag.js) -->
+    
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ == undefined) {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js" />')
+        }
+    </script>
+    
+        <body class="post-body">
+    
+        <!-- header -->
+        <header class="header header-mobile">
+    <!-- top read progress line -->
+    <div class="header-element">
+        <div class="read-progress"></div>
+    </div>
+    <!-- sidebar menu button -->
+    <div class="header-element">
+        
+            <div class="header-sidebar-menu">
         
             
-
-    <div class="valine-container">
-        <div id="vcomments"></div>
-        <script 
-                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"
-                async
-                onerror="window.KeepCommentPlugin.loadFailHandle()"
-        ></script>
-        <script 
-                async
-                onerror="window.KeepCommentPlugin.loadFailHandle()"
-        >
-          window.KeepCommentPlugin.initValine = () => {
-            const config = {
-              el: '#vcomments',
-              appId: 'u4mIZkTNUsJNr3qekDxQNg4e-MdYXbMMI',
-              appKey: 'EeBQXsUyvHQ7uSacnVCyiQRT',
-              meta: ['nick', 'mail', 'link'],
-              avatar: 'wavatar',
-              enableQQ: true,
-              placeholder: '',
-              lang: 'en'.toLowerCase()
-            }
-
-            if ('https://namelessriver.github.io/') {
-              config.serverURLs = 'https://namelessriver.github.io/'
-            }
-
-            if (window?.Valine) {
-              new Valine(config)
-              window.KeepCommentPlugin.hideLoading()
-            } else {
-              setTimeout(() => {
-                window.KeepCommentPlugin.initValine()
-              }, 1000)
-            }
-          }
-
-          if ('false' === 'true') {
-            setTimeout(() => {
-              window.KeepCommentPlugin.initValine()
-            }, 1200)
-          } else {
-            window.addEventListener('DOMContentLoaded', window.KeepCommentPlugin.initValine)
-          }
-        </script>
+                <div style="padding-left: 1px;">&#xe775;</div>
+            
+        </div>
     </div>
-
-
+    <!-- header actions -->
+    <div class="header-actions">
+        <!-- theme mode switch button -->
+        <span class="header-theme-btn header-element">
+            <i class="fas fa-adjust"></i>
+        </span>
+        <!-- back to home page text -->
+        <span class="home-link header-element">
+            <a href=/>再會，謝謝所有的魚</a>
+        </span>
+    </div>
+    <!-- toggle banner for post layout -->
+    
         
-    </div>
-
-
-
-
-
-                
+            <div class="banner">
+        
+            <div class="blog-title header-element">
+                <a href="/">再會，謝謝所有的魚</a>
+            </div>
+            <div class="post-title header-element">
+                <a href="#" class="post-name">龙族/源楚源</a>
             </div>
         </div>
+    
+</header>
 
+        <!-- fixed footer -->
+        <footer class="footer-fixed">
+    <!-- back to top button -->
+    <div class="footer-fixed-element">
         
-    </div>
-</div>
-
-
-                
-            </div>
-
-        </div>
-
-        <div class="page-main-content-bottom border-box">
-            
-<footer class="footer border-box">
-    <div class="border-box website-info-box default">
+            <div class="back-top back-top-hidden">
         
-            <div class="copyright-info info-item default">
-                &copy;&nbsp;<span>2021</span>&nbsp;-&nbsp;2023
-                
-                    &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">Fluffy Lion</a>
-                
-            </div>
-
-            <div class="theme-info info-item default">
-                Powered by&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;&&nbsp;Theme&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
-            </div>
-
-            
-
-            
         
-
-        <div class="count-item info-item default">
-            
-
-            
-
-            
+            <div>&#xe639;</div>
+        
         </div>
     </div>
 </footer>
 
-        </div>
-    </div>
+        <!-- wrapper -->
+        <div class="wrapper">
+            <div class="site-intro" style="
 
-    <!-- post tools -->
+
+
+
+
+
+
+    height:50vh;
+
+">
     
-        <div class="post-tools right-toc">
-            <div class="post-tools-container border-box">
-    <ul class="tools-list border-box">
-        <!-- PC TOC show toggle -->
+    <!-- 主页  -->
+    
         
-
-        <!-- PC go comment -->
+    <!-- 404页  -->
+    
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+                龙族/源楚源
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+                
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页 meta -->
         
-            <li class="tools-item flex-center go-to-comments">
-                <i class="fas fa-comment"></i>
-                <span class="post-comments-count"></span>
-            </li>
-        
-    </ul>
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="亦有人造訪過這片原野">亦有人造訪過這片原野</a>
+    
 </div>
 
-        </div>
-    
-
-    <!-- side tools -->
-    <div class="side-tools">
-        <div class="side-tools-container border-box ">
-    <ul class="side-tools-list side-tools-show-handle border-box">
-        <li class="tools-item tool-font-adjust-plus flex-center">
-            <i class="fas fa-search-plus"></i>
-        </li>
-
-        <li class="tools-item tool-font-adjust-minus flex-center">
-            <i class="fas fa-search-minus"></i>
-        </li>
-
-        <li class="tools-item tool-toggle-theme-mode flex-center">
-            <i class="fas fa-moon"></i>
-        </li>
-
-        <!-- rss -->
-        
-
-        <li class="tools-item tool-scroll-to-bottom flex-center">
-            <i class="fas fa-arrow-down"></i>
-        </li>
-    </ul>
-
-    <ul class="exposed-tools-list border-box">
-        
-
-        
-            <li class="tools-item go-to-comments-tablet flex-center">
-                <i class="fas fa-comment"></i>
-            </li>
-        
-
-        <li class="tools-item tool-toggle-show flex-center">
-            <i class="fas fa-cog fa-spin"></i>
-        </li>
-
-        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
-            <i class="arrow fas fa-arrow-up"></i>
-            <span class="percent"></span>
-        </li>
-    </ul>
-</div>
-
-    </div>
-
-    <!-- image mask -->
-    <div class="zoom-in-image-mask">
-    <img class="zoom-in-image">
-</div>
-
-
-    <!-- local search -->
-    
-        <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
-          <span class="search-input-field-pre">
-            <i class="fas fa-keyboard"></i>
-          </span>
-            <div class="search-input-container">
-                <input autocomplete="off"
-                       autocorrect="off"
-                       autocapitalize="off"
-                       placeholder="Search..."
-                       spellcheck="false"
-                       type="search"
-                       class="search-input"
-                >
+                
+                <!-- 文章字数统计 -->
+                
+                <div class="post-intro-meta">
+                    <!-- 撰写日期 -->
+                    <span class="iconfont-archer post-intro-calander">&#xe676;</span>
+                    <span class="post-intro-time">2023/12/06</span>
+                    <!-- busuanzi -->
+                    
+                    <!-- 文章分享 -->
+                    <span class="share-wrapper">
+                        <span class="iconfont-archer share-icon">&#xe71d;</span>
+                        <span class="share-text">Share</span>
+                        <ul class="share-list">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
             </div>
-            <span class="close-popup-btn">
-                <i class="fas fa-times"></i>
-            </span>
-        </div>
-        <div id="search-result">
-            <div id="no-result">
-                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
-            </div>
-        </div>
+        
     </div>
 </div>
 
-    
+            <script>
+  // get user agent
+  function getBrowserVersions() {
+    var u = window.navigator.userAgent
+    return {
+      userAgent: u,
+      trident: u.indexOf('Trident') > -1, //IE内核
+      presto: u.indexOf('Presto') > -1, //opera内核
+      webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+      gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+      mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+      ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+      android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+      iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+      iPad: u.indexOf('iPad') > -1, //是否为iPad
+      webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+      weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+      uc: u.indexOf('UCBrowser') > -1, //是否为android下的UC浏览器
+    }
+  }
+  var browser = {
+    versions: getBrowserVersions(),
+  }
+  console.log('userAgent: ' + browser.versions.userAgent)
 
-    <!-- tablet toc -->
+  // callback
+  function fontLoaded() {
+    console.log('font loaded')
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document
+        .getElementsByClassName('intro-title')[0]
+        .classList.add('intro-fade-in')
+      document
+        .getElementsByClassName('intro-subtitle')[0]
+        .classList.add('intro-fade-in')
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in')
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb() {
+    if (browser.versions.uc) {
+      console.log('UCBrowser')
+      fontLoaded()
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular'],
+        },
+        loading: function () {
+          // 所有字体开始加载
+          // console.log('font loading');
+        },
+        active: function () {
+          // 所有字体已渲染
+          fontLoaded()
+        },
+        inactive: function () {
+          // 字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout')
+          fontLoaded()
+        },
+        timeout: 5000, // Set the timeout to two seconds
+      })
+    }
+  }
+
+  function asyncErr() {
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0]
+    o.src = u
+    if (cb) {
+      o.addEventListener(
+        'load',
+        function (e) {
+          cb(null, e)
+        },
+        false
+      )
+    }
+    if (err) {
+      o.addEventListener(
+        'error',
+        function (e) {
+          err(null, e)
+        },
+        false
+      )
+    }
+    s.parentNode.insertBefore(o, s)
+  }
+
+  var asyncLoadWithFallBack = function (arr, success, reject) {
+    var currReject = function () {
+      reject()
+      arr.shift()
+      if (arr.length) async(arr[0], success, currReject)
+    }
+
+    async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack(
+    [
+      'https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js',
+      'https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js',
+      "/lib/webfontloader.min.js",
+    ],
+    asyncCb,
+    asyncErr
+  )
+</script>
+
+            <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+            <div class="container container-unloaded">
+                <main class="main post-page">
+    <article class="article-entry">
+        <p>楚子航听雨时，源稚生也听雨。<br>雨下得很大，把廊前的草木濯洗成鲜浓的深绿，楚子航和源稚生在一斗暗室内相对而坐，背影挺拔如松，膝前横陈两把古刀。<br>他们之间本就没有很多话说，何况该讲的话已经讲完，所以源稚生只是适时地沉默，让雨声填补那些流荡的空白。<br>线香燃去半数，庭院里的添水咚地敲响一声，源稚生忽然说：“日本的俳句里写过‘我庭小草复萌发，无限天地行将绿’，中国人怎样形容这样的意境？”<br>楚子航想了想：“我不知道。”<br>不知道也是一个答案，源稚生点了点头，为他斟酒。<br>酒是清酒，第一口往往甘甜清爽，要咽进喉咙才能觉出后劲，这是源稚生选的酒。<br>楚子航稳稳持着那只酒杯，并没有喝，他没有想象过源稚生挑选酒的样子，更没有想象过还能见到这个人，在确认身份前，一个卡塞尔专员会保持最基本的警惕。他刚刚听到了一个荒谬的故事，关乎死亡、灵魂、两把刀，他企图为之做个总结陈述：“你确实已经死了，死在那夜的红井，只是因为精神依附在这两把刀上，才在这里出现。”<br>“是的，楚君。”源稚生为他的话而微笑起来，“我是一个幽灵。”</p>
+<p>楚子航终于看向桌上的两把武士刀，一把太刀、一把肋差，它们分别是童子切安纲和蜘蛛切。这这两把刀身上凝聚着飘渺沉着的杀意，造型朴重庄严，除却蜘蛛切上一行刀铭“蜘蛛山中凶祓夜伏”，就再没有任何装饰。刀是乌鸦在他离开日本前夕亲自交给他的，乌鸦解释说，老大——他还是坚持这么称呼源稚生——老大特地嘱咐过的，如果最后这两把刀没有毁掉，就送给那个叫做楚子航的人。楚子航接过了故人指名道姓要他收下的刀，颇费了一番周折，才携着这两把上古的杀器通过安检回到中国，他很珍惜这两把古刀，甚至买回刀架，把它们好好地摆在上面，如果出任务时把它们带出门，回来必会擦拭保养，可他一次都没有把刀从鞘中抽出来过。楚子航看向刀时，总感觉自己在看向一种遥远的意志，说是故人的遗志也未尝不可。他从没想过自己还能见到源稚生。<br>“红井之后，它们就一直留在鞘里，这两把刀并不认得你，楚君。如果你没有在刀上贯彻自己的意志，亲手挥刀斩杀过敌人，它就还不属于你。”<br>“如果我拔出刀。”楚子航静静说，“你也不会存在了，我不会用你的刀，源君。我也有自己趁手的武器，暂时没有更换的必要。”<br>源稚生的面孔被罩在阴影下，有一瞬间的神色看起来类于悲悯，楚子航定睛再看，那表情已经消失了，所剩无多的线香终于燃尽，雨还没有要停的意思。楚子航端起酒杯，把里面的清酒一饮而尽，然后他站起身，头也不回地走向外面，提起玄关下的一把黑伞。<br>“再见，源君。”<br>“再见，楚君。”</p>
+<p>＊＊＊</p>
+<p>他终于又回到那个雨夜，雪亮的车灯把夜色撕开一道口子，迈巴赫的引擎在雨中发出轰鸣，只是这次不再有挡在他身前的男人，男人已经为了自己的儿子拦下了一次奥丁之矛，现在没有人再能为他对抗神的意志，只剩下楚子航自己。他和奥丁隔着长久的距离对峙，形状扭曲的漆黑影子蛰伏在他身边，随时可能伺机扑上，伏倒在他身旁的尸体已经堆了二十几具，村雨的刀刃已经在无休的砍杀中崩开裂口。他不再看卷刃的刀，绵密的冷雨针扎一般刺入毛孔，很快就冲淡了从脸颊上淌落的血，楚子航深吸一口气，咬住了自己的舌尖，用那一点尖锐的痛意来强迫自己集中精神，他的胸膛仍在剧烈起伏，体力所余无几，要么放手一搏，要么永远被困。楚子航不是一个喜欢在别人身上寄托希望的人，过去在暴雨中狂奔的孩子已经长大，有了能够并肩战斗的朋友，有了喜欢的女孩，他自己甚至成为了被寄托希望的那一个，但是这一刻，他很希望源稚生还在。<br>一滴雨不偏不倚敲中刀鞘，咚；庭院里的添水轻巧地栽下来，咚。<br>再帮我一次吧，楚子航在心里说，<br>源君。<br>他的手移到腰侧，倏忽抓住了蜘蛛切的刀柄——领域张开，炽热的烈焰席卷空间；天地间雨幕仍旧如织，只是再也溅不到他身上一滴水。<br>楚子航握住古刀时，感受到了一种莫能名状的冲动，这两把刀承载着源稚生的记忆，拔刀、挥刀、收刀。从他第一次在橘政宗的指导下练习纯正的古流刀术，到天照命用刀刃贯穿敌人的心脏，到最后这个男人独自步入一口井，坦然迎接自己将死的命运，录像中的遗言居然只是把自己的刀转交给另一个人……源君，当时你会在想什么呢？<br>古刀躺在楚子航手中，流露出宁静而沉着的杀意，楚子航握紧它，倾注绝对的斩切意志，“君焰”的能力被灌注于刀身，利刃没进死侍的身体，像热刀切入黄油，楚子航冲向最近的出口，凡有敢挡在他面前的死侍皆被割裂而后焚烧殆尽。他面前出现了一道铁塑似的影子，那是奥丁的分身。楚子航一刀劈下，炙热的烈焰包裹着水银般光亮一新的刀芒，当中一步踏出的身影分明有源稚生的面容，那个死在东京大雨之夜里的源氏家主重临人间。他拔出楚子航身侧的另一把蜘蛛切。旧主的刀术更加炉火纯青，运刀如臂使指，他的刀术带有睥睨的威严，连同死者的愤怒和不甘一起爆发——那一晚他无法用凶刃对准自己的弟弟，却可以在此地全无保留地挥刀斩向玩弄他人命运于股掌的神明。黑影发出凄厉的嚎叫，声音如同铁器在刮擦耳膜，终于慢慢滑向地面，主神的压迫感在瞬息之间消洱无形，雨势随之减弱了，死侍慑于古刀上暴烈的杀意，迟疑着不敢上前。就在这短短一刹之内，源稚生的言灵已经发动，死侍不堪重负似的跪倒在地，一节节颈椎发出尖锐的咯嘣声，最终向着源稚生跪拜下去，这些怪物伸出铁青色的利爪，却不能触碰到他的衣角。楚子航站在领域的边缘回过头来，只差一步就能离开这座鬼打墙的高速公路，他看见源氏家主的身体像消融在水里的药片那样崩解了，彻底消失之前，楚子航听见他说话，像一声风铃的轻响。<br>源稚生说，现在它们是你的刀了，楚君。</p>
+<p>＊＊＊</p>
+<p>楚子航对于酒一窍不通，他在超市里漫无目的地逛了很久，最后选了一瓶清酒，瓶身上画着一只象龟。他看着那只象龟，突然想起一些事，源稚生那天坐在廊下告诉他的俳句，还问他那在汉语里是怎样的意境。楚子航是个很认真的人，他当时没能回答上来，所以回来就去找答案，他买了一本古文诗词选放在床头，每晚坚持翻上几页，从封皮的图案判断是教辅区的读物，其实这本书他还没有看完，不过好像已经找到了答案。<br>楚子航找出两只酒杯，向里面分别注满了酒，他端起其中一只等了很久，但没有任何声音响起。风铃寂寞地响了一声，庭院归于无声无息。楚子航用杯底轻轻碰一下桌面，发出清脆“咚”的一响。<br>觉来不语到晓坐，一夜洞庭湖水声。他想这样告诉源稚生。</p>
+
+    </article>
+    <!-- license -->
+    
+    <!-- paginator -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2023/12/06/amysterybox-3/" title="哈利波特/犬狼犬">
+                    <div class="nextTitle">哈利波特/犬狼犬</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2023/12/06/amysterybox-1/" title="逆水寒/戚少商个人">
+                    <div class="prevTitle">逆水寒/戚少商个人</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- comment -->
+    
+        <div class="post-comment">
+            <!-- 来必力 City 版安装代码 -->
+
+
+            
+
+            
+
+            
+
+            <!-- utteranc评论 -->
+
+
+            <!-- partial('_partial/comment/changyan') -->
+            <!--PC版-->
+
+
+            
+            
+
+            
+
+        </div>
+    
+    <!-- timeliness note -->
+    <!-- idea from: https://hexo.fluid-dev.com/posts/hexo-injector/#%E6%96%87%E7%AB%A0%E6%97%B6%E6%95%88%E6%80%A7%E6%8F%90%E7%A4%BA -->
+    
+    <!-- Mathjax -->
     
 </main>
 
-
-
-
-<!-- common -->
-
-<script src="/js/utils.js"></script>
-
-<script src="/js/header-shrink.js"></script>
-
-<script src="/js/back2top.js"></script>
-
-<script src="/js/toggle-theme.js"></script>
-
-<script src="/js/code-block.js"></script>
-
-<script src="/js/main.js"></script>
-
-<script src="/js/libs/anime.min.js"></script>
-
-
-<!-- local-search -->
-
+                <!-- profile -->
+                
+            </div>
+            <footer class="footer footer-unloaded">
+    <!-- social  -->
     
-<script src="/js/local-search.js"></script>
-
-
-
-<!-- lazyload -->
-
-
-<div class="">
+        <div class="social">
+            
     
-        <!-- post-helper -->
         
-<script src="/js/post/post-helper.js"></script>
+    
+        
+            
+                <a href="//github.com/namelessriver" class="iconfont-archer github" target="_blank" title=github></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
 
 
+        </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- website approve for Chinese user -->
+    
+    <!-- 不蒜子  -->
+    	
+</footer>
+
+        </div>
         <!-- toc -->
         
+            <div class="toc-wrapper toc-wrapper-loding" style=
 
-        <!-- copyright-info -->
+
+
+
+
+
+
+    top:50vh;
+
+>
+                <div class="toc-catalog">
+                    <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+                </div>
+                
+            </div>
         
-
-        <!-- share -->
+        <!-- sidebar -->
+        <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+        <div class="sidebar-panel-archives">
+    <!-- 在 ejs 中将 archive 按照时间排序 -->
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
     
-
-    <!-- category-page -->
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
-
-    <!-- links-page -->
     
-
-    <!-- photos-page -->
     
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 27
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+        
+            
+            
+            <div class="archive-year"> 2023 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/12</span>
+            <a class="archive-post-title" href="/2023/12/12/dairy8/">diary</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/11</span>
+            <a class="archive-post-title" href="/2023/12/11/amysterybox-12/">amysterybox</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/11</span>
+            <a class="archive-post-title" href="/2023/12/11/study1/">study1</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/09</span>
+            <a class="archive-post-title" href="/2023/12/09/bartending-record/">bartending record</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/09</span>
+            <a class="archive-post-title" href="/2023/12/09/movies/">movies</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/09</span>
+            <a class="archive-post-title" href="/2023/12/09/game/">要紧的不只是成为一个人</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/06</span>
+            <a class="archive-post-title" href="/2023/12/06/VA-11-HALL-A/">Hexo主题编写随记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/06</span>
+            <a class="archive-post-title" href="/2023/12/06/amysterybox-10/">ff14/光暗光</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/06</span>
+            <a class="archive-post-title" href="/2023/12/06/amysterybox-2/">龙族/源楚源</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/06</span>
+            <a class="archive-post-title" href="/2023/12/06/amysterybox-11/">咒术回战/五夏五</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/06</span>
+            <a class="archive-post-title" href="/2023/12/06/amysterybox-5/">JOJO的奇妙冒险/承花承</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/06</span>
+            <a class="archive-post-title" href="/2023/12/06/amysterybox-4/">古原人设/original character</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/06</span>
+            <a class="archive-post-title" href="/2023/12/06/amysterybox-3/">哈利波特/犬狼犬</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/06</span>
+            <a class="archive-post-title" href="/2023/12/06/amysterybox-6/">金光佈袋戲/風千風</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/06</span>
+            <a class="archive-post-title" href="/2023/12/06/amysterybox-7/">伪装者/台风</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/06</span>
+            <a class="archive-post-title" href="/2023/12/06/amysterybox-8/">古原original character</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/06</span>
+            <a class="archive-post-title" href="/2023/12/06/amysterybox-9/">我的团长我的团/孟烦了个人向</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/06</span>
+            <a class="archive-post-title" href="/2023/12/06/amysterybox-1/">逆水寒/戚少商个人</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/06</span>
+            <a class="archive-post-title" href="/2023/12/06/amysterybox/">繡春刀/沈裴沈</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/02</span>
+            <a class="archive-post-title" href="/2023/12/02/dairy6/">从0开始的异世界机器学习生活（1）</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/02</span>
+            <a class="archive-post-title" href="/2023/12/02/dairy7/">And then she smiled</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/05</span>
+            <a class="archive-post-title" href="/2023/10/05/dairy3/">爱人寂寥地出生在1874</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/30</span>
+            <a class="archive-post-title" href="/2023/09/30/dairy2/">假如一天只你共我</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/30</span>
+            <a class="archive-post-title" href="/2023/09/30/dairy5/">To risk everything</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/23</span>
+            <a class="archive-post-title" href="/2023/09/23/dairy4/">肚子饿的时候抬头看星星吧！</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/17</span>
+            <a class="archive-post-title" href="/2023/09/17/aboutfood1/">生存确认</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/16</span>
+            <a class="archive-post-title" href="/2023/09/16/dairy1/">也可以是鱼油纪年</a>
+        </li>
+    
+    </div>
 </div>
 
-<!-- mermaid -->
-
-
-<!-- pjax -->
-
-
-
-    
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
         
+            <span class="sidebar-tag-name" data-tags="索拉里斯香蕉纪年">
+                <span class="iconfont-archer">&#xe606;</span>
+                索拉里斯香蕉纪年
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="鲁加环游艾欧泽亚美食评测">
+                <span class="iconfont-archer">&#xe606;</span>
+                鲁加环游艾欧泽亚美食评测
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="太阳黑子和克拉拉">
+                <span class="iconfont-archer">&#xe606;</span>
+                太阳黑子和克拉拉
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="亦有人造訪過這片原野">
+                <span class="iconfont-archer">&#xe606;</span>
+                亦有人造訪過這片原野
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="VA-11 HALL-A">
+                <span class="iconfont-archer">&#xe606;</span>
+                VA-11 HALL-A
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="献杯">
+                <span class="iconfont-archer">&#xe606;</span>
+                献杯
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="Dr. Strangelove:How I Learned to Stop Worrying and Love the Bomb">
+                <span class="iconfont-archer">&#xe606;</span>
+                Dr. Strangelove:How I Learned to Stop Worrying and Love the Bomb
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="地は冷たく、空は遠く">
+                <span class="iconfont-archer">&#xe606;</span>
+                地は冷たく、空は遠く
+            </span>
+        
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+        缺失模块，请参考主题文档进行安装配置：https://github.com/fi3ework/hexo-theme-archer#%E5%AE%89%E8%A3%85%E4%B8%BB%E9%A2%98
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
     
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+
+    </div>
+</div>
+
+        <!-- site-meta -->
+        <script>
+    var siteMetaRoot = "/"
+    if (siteMetaRoot === "undefined") {
+        siteMetaRoot = '/'
+    }
+    var siteMeta = {
+        url: "http://namelessriver.github.com",
+        root: siteMetaRoot,
+        author: "FLUFFY LION"
+    }
+</script>
+
+        <!-- import experimental options here -->
+        <!-- Custom Font -->
 
 
-<script type = "text/javascript" src="/js/snow.js"></script>
-<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
-<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
-<script type="text/javascript" src="/js/firework.js"></script>
-</body>
+        <!-- main func -->
+        <script src="/scripts/main.js?v=20211217"></script>
+        <!-- dark mode -->
+        <script src="/scripts/dark.js?v=20211217"></script>
+        <!-- fancybox -->
+        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" defer></script>
+        <!-- algolia -->
+        
+        <!-- busuanzi -->
+        
+        <!-- CNZZ -->
+        
+        <!-- async load share.js -->
+        
+            <script src="/scripts/share.js?v=20211217" async></script>
+        
+        <!-- mermaid -->
+        
+    </body>
 </html>
