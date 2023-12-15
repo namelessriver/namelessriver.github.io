@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!-- title -->
-
-
-    
-
-<!-- keywords -->
-
-
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="author" content="FLUFFY LION">
-    <meta name="renderer" content="webkit">
-    <meta name="copyright" content="FLUFFY LION">
-    
-        <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
-    
-    <meta name="description" content="北京→柏林 经济舱">
-    <meta name="description" content="《烧烤》 戚少商在吃烤串。不管他隔桌的人怎么划拳、呐喊、碰杯，戚少商只是闷头苦吃，这也是有原因的：一则因为没有人与他碰杯，又一则因为他只有一条胳膊。只要他去端酒杯、或者与人划拳，那么就留不出一只手再去拿羊肉串，而戚少商真的只是来吃烤串的。他坐的烧烤摊和广东最大的酒楼之隔一条马路，车辆往来络绎不绝，戚少商不仅知道这所酒楼，还曾和此间的客家老板称兄道弟，因为他年轻时无数次地出入这里——和他的七位把兄弟">
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"namelessriver.github.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="《烧烤》 戚少商在吃烤串。不管他隔桌的人怎么划拳、呐喊、碰杯，戚少商只是闷头苦吃，这也是有原因的：一则因为没有人与他碰杯，又一则因为他只有一条胳膊。只要他去端酒杯、或者与人划拳，那么就留不出一只手再去拿羊肉串，而戚少商真的只是来吃烤串的。他坐的烧烤摊和广东最大的酒楼之隔一条马路，车辆往来络绎不绝，戚少商不仅知道这所酒楼，还曾和此间的客家老板称兄道弟，因为他年轻时无数次地出入这里——和他的七位把兄弟">
 <meta property="og:type" content="article">
 <meta property="og:title" content="逆水寒&#x2F;戚少商个人">
 <meta property="og:url" content="http://namelessriver.github.com/2023/12/06/amysterybox-1/index.html">
@@ -31,1247 +32,352 @@
 <meta property="article:author" content="FLUFFY LION">
 <meta property="article:tag" content="亦有人造訪過這片原野">
 <meta name="twitter:card" content="summary">
-    <meta http-equiv="Cache-control" content="no-cache">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <link rel="icon" href="/assets/favicon.ico">
-    
-    <title>逆水寒/戚少商个人 · fi3ework&#39;s Studio</title>
-    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
-/* This file is meant as a standalone workflow for
-- testing support for link[rel=preload]
-- enabling async CSS loading in browsers that do not support rel=preload
-- applying rel preload css once loaded, whether supported or not.
-*/ -->
-<script>
-    (function (w) {
-        'use strict'
-        // rel=preload support test
-        if (!w.loadCSS) {
-            w.loadCSS = function () {}
-        }
-        // define on the loadCSS obj
-        var rp = (loadCSS.relpreload = {})
-        // rel=preload feature support test
-        // runs once and returns a function for compat purposes
-        rp.support = (function () {
-            var ret
-            try {
-                ret = w.document.createElement('link').relList.supports('preload')
-            } catch (e) {
-                ret = false
-            }
-            return function () {
-                return ret
-            }
-        })()
 
-        // if preload isn't supported, get an asynchronous load by using a non-matching media attribute
-        // then change that media back to its intended value on load
-        rp.bindMediaToggle = function (link) {
-            // remember existing media attr for ultimate state, or default to 'all'
-            var finalMedia = link.media || 'all'
+<link rel="canonical" href="http://namelessriver.github.com/2023/12/06/amysterybox-1/">
 
-            function enableStylesheet() {
-                link.media = finalMedia
-            }
 
-            // bind load handlers to enable media
-            if (link.addEventListener) {
-                link.addEventListener('load', enableStylesheet)
-            } else if (link.attachEvent) {
-                link.attachEvent('onload', enableStylesheet)
-            }
-
-            // Set rel and non-applicable media type to start an async request
-            // note: timeout allows this to happen async to let rendering continue in IE
-            setTimeout(function () {
-                link.rel = 'stylesheet'
-                link.media = 'only x'
-            })
-            // also enable media after 3 seconds,
-            // which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
-            setTimeout(enableStylesheet, 3000)
-        }
-
-        // loop through link elements in DOM
-        rp.poly = function () {
-            // double check this to prevent external calls from running
-            if (rp.support()) {
-                return
-            }
-            var links = w.document.getElementsByTagName('link')
-            for (var i = 0; i < links.length; i++) {
-                var link = links[i]
-                // qualify links to those with rel=preload and as=style attrs
-                if (
-                    link.rel === 'preload' &&
-                    link.getAttribute('as') === 'style' &&
-                    !link.getAttribute('data-loadcss')
-                ) {
-                    // prevent rerunning on link
-                    link.setAttribute('data-loadcss', true)
-                    // bind listeners to toggle media back
-                    rp.bindMediaToggle(link)
-                }
-            }
-        }
-
-        // if unsupported, run the polyfill
-        if (!rp.support()) {
-            // run once at least
-            rp.poly()
-
-            // rerun poly on an interval until onload
-            var run = w.setInterval(rp.poly, 500)
-            if (w.addEventListener) {
-                w.addEventListener('load', function () {
-                    rp.poly()
-                    w.clearInterval(run)
-                })
-            } else if (w.attachEvent) {
-                w.attachEvent('onload', function () {
-                    rp.poly()
-                    w.clearInterval(run)
-                })
-            }
-        }
-
-        // commonjs
-        if (typeof exports !== 'undefined') {
-            exports.loadCSS = loadCSS
-        } else {
-            w.loadCSS = loadCSS
-        }
-    })(typeof global !== 'undefined' ? global : this)
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
 </script>
 
-    <style type="text/css">
-    @font-face {
-        font-family: 'Oswald-Regular';
-        src: url("/font/Oswald-Regular.ttf");
-    }
+  <title>逆水寒/戚少商个人 | 鱼油纪年</title>
+  
 
-    body {
-        margin: 0;
-    }
 
-    header,
-    footer,
-    .back-top,
-    .sidebar,
-    .container,
-    .site-intro-meta,
-    .toc-wrapper {
-        display: none;
-    }
 
-    .site-intro {
-        position: relative;
-        z-index: 3;
-        width: 100%;
-        /* height: 50vh; */
-        overflow: hidden;
-    }
 
-    .site-intro-placeholder {
-        position: absolute;
-        z-index: -2;
-        top: 0;
-        left: 0;
-        width: calc(100% + 300px);
-        height: 100%;
-        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
-        background-position: center center;
-        transform: translate3d(-226px, 0, 0);
-        animation: gradient-move 2.5s ease-out 0s infinite;
-    }
 
-    @keyframes gradient-move {
-        0% {
-            transform: translate3d(-226px, 0, 0);
-        }
-        100% {
-            transform: translate3d(0, 0, 0);
-        }
-    }
-</style>
 
-    <link rel="preload" href="/css/style.css?v=20211217" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="/css/dark.css?v=20211217" as="style">
-    <link rel="stylesheet" href="/css/dark.css">
-    <link rel="stylesheet" href="/css/mobile.css?v=20211217" media="(max-width: 960px)">
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" as="script">
-    <link rel="preload" href="/scripts/main.js?v=20211217" as="script">
-    <link rel="preload" href="/scripts/dark.js?v=20211217" as="script">
-    <link rel="preload" href="/font/Oswald-Regular.ttf" as="font" crossorigin>
-    <link rel="preload" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" as="font" crossorigin>
-    <!-- algolia -->
-    
-    <!-- 百度统计  -->
-    
-    <!-- Google tag (gtag.js) -->
-    
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-    <script type="text/javascript">
-        if (typeof window.$ == undefined) {
-            console.warn('jquery load from jsdelivr failed, will load local script')
-            document.write('<script src="/lib/jquery.min.js" />')
-        }
-    </script>
-    
-        <body class="post-body">
-    
-        <!-- header -->
-        <header class="header header-mobile">
-    <!-- top read progress line -->
-    <div class="header-element">
-        <div class="read-progress"></div>
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-    <!-- sidebar menu button -->
-    <div class="header-element">
-        
-            <div class="header-sidebar-menu">
-        
-            
-                <div style="padding-left: 1px;">&#xe775;</div>
-            
-        </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">鱼油纪年</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
     </div>
-    <!-- header actions -->
-    <div class="header-actions">
-        <!-- theme mode switch button -->
-        <span class="header-theme-btn header-element">
-            <i class="fas fa-adjust"></i>
-        </span>
-        <!-- back to home page text -->
-        <span class="home-link header-element">
-            <a href=/>fi3ework's Studio.</a>
-        </span>
-    </div>
-    <!-- toggle banner for post layout -->
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
     
-        
-            <div class="banner">
-        
-            <div class="blog-title header-element">
-                <a href="/">fi3ework&#39;s Studio.</a>
-            </div>
-            <div class="post-title header-element">
-                <a href="#" class="post-name">逆水寒/戚少商个人</a>
-            </div>
-        </div>
-    
-</header>
-
-        <!-- fixed footer -->
-        <footer class="footer-fixed">
-    <!-- back to top button -->
-    <div class="footer-fixed-element">
-        
-            <div class="back-top back-top-hidden">
-        
-        
-            <div>&#xe639;</div>
-        
-        </div>
-    </div>
-</footer>
-
-        <!-- wrapper -->
-        <div class="wrapper">
-            <div class="site-intro" style="
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
 
 
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
 
-
-
-
-
-    height:50vh;
-
-">
-    
-    <!-- 主页  -->
-    
-        
-    <!-- 404页  -->
-    
-    <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
-    <div class="site-intro-meta">
-        <!-- 标题  -->
-        <h1 class="intro-title">
-            <!-- 主页  -->
+          <div class="content post posts-expand">
             
-                逆水寒/戚少商个人
-            <!-- 404 -->
-            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://namelessriver.github.com/2023/12/06/amysterybox-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="FLUFFY LION">
+      <meta itemprop="description" content="北京→柏林 经济舱">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="鱼油纪年">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          逆水寒/戚少商个人
         </h1>
-        <!-- 副标题 -->
-        <p class="intro-subtitle">
-            <!-- 主页副标题  -->
-            
-                
-            <!-- 404 -->
-            
-        </p>
-        <!-- 文章页 meta -->
-        
-            <div class="post-intros">
-                <!-- 文章页标签  -->
-                
-                    <div class= post-intro-tags >
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-12-06 16:58:15 / Modified: 17:02:06" itemprop="dateCreated datePublished" datetime="2023-12-06T16:58:15+01:00">2023-12-06</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
     
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="亦有人造訪過這片原野">亦有人造訪過這片原野</a>
     
-</div>
+    <div class="post-body" itemprop="articleBody">
 
-                
-                <!-- 文章字数统计 -->
-                
-                <div class="post-intro-meta">
-                    <!-- 撰写日期 -->
-                    <span class="iconfont-archer post-intro-calander">&#xe676;</span>
-                    <span class="post-intro-time">2023/12/06</span>
-                    <!-- busuanzi -->
-                    
-                        <span id="busuanzi_container_page_pv" class="busuanzi-pv">
-                            <span class="iconfont-archer post-intro-busuanzi">&#xe602;</span>
-                            <span id="busuanzi_value_page_pv"></span>
-                        </span>
-                    
-                    <!-- 文章分享 -->
-                    <span class="share-wrapper">
-                        <span class="iconfont-archer share-icon">&#xe71d;</span>
-                        <span class="share-text">Share</span>
-                        <ul class="share-list">
-                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
-                                <div class="share-qrcode"></div>
-                            </li>
-                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
-                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
-                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
-                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
-                        </ul>
-                    </span>
-                </div>
-            </div>
-        
-    </div>
-</div>
-
-            <script>
-  // get user agent
-  function getBrowserVersions() {
-    var u = window.navigator.userAgent
-    return {
-      userAgent: u,
-      trident: u.indexOf('Trident') > -1, //IE内核
-      presto: u.indexOf('Presto') > -1, //opera内核
-      webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
-      gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
-      mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
-      ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
-      android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
-      iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
-      iPad: u.indexOf('iPad') > -1, //是否为iPad
-      webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
-      weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
-      uc: u.indexOf('UCBrowser') > -1, //是否为android下的UC浏览器
-    }
-  }
-  var browser = {
-    versions: getBrowserVersions(),
-  }
-  console.log('userAgent: ' + browser.versions.userAgent)
-
-  // callback
-  function fontLoaded() {
-    console.log('font loaded')
-    if (document.getElementsByClassName('site-intro-meta')) {
-      document
-        .getElementsByClassName('intro-title')[0]
-        .classList.add('intro-fade-in')
-      document
-        .getElementsByClassName('intro-subtitle')[0]
-        .classList.add('intro-fade-in')
-      var postIntros = document.getElementsByClassName('post-intros')[0]
-      if (postIntros) {
-        postIntros.classList.add('post-fade-in')
-      }
-    }
-  }
-
-  // UC不支持跨域，所以直接显示
-  function asyncCb() {
-    if (browser.versions.uc) {
-      console.log('UCBrowser')
-      fontLoaded()
-    } else {
-      WebFont.load({
-        custom: {
-          families: ['Oswald-Regular'],
-        },
-        loading: function () {
-          // 所有字体开始加载
-          // console.log('font loading');
-        },
-        active: function () {
-          // 所有字体已渲染
-          fontLoaded()
-        },
-        inactive: function () {
-          // 字体预加载失败，无效字体或浏览器不支持加载
-          console.log('inactive: timeout')
-          fontLoaded()
-        },
-        timeout: 5000, // Set the timeout to two seconds
-      })
-    }
-  }
-
-  function asyncErr() {
-    console.warn('script load from CDN failed, will load local script')
-  }
-
-  // load webfont-loader async, and add callback function
-  function async(u, cb, err) {
-    var d = document,
-      t = 'script',
-      o = d.createElement(t),
-      s = d.getElementsByTagName(t)[0]
-    o.src = u
-    if (cb) {
-      o.addEventListener(
-        'load',
-        function (e) {
-          cb(null, e)
-        },
-        false
-      )
-    }
-    if (err) {
-      o.addEventListener(
-        'error',
-        function (e) {
-          err(null, e)
-        },
-        false
-      )
-    }
-    s.parentNode.insertBefore(o, s)
-  }
-
-  var asyncLoadWithFallBack = function (arr, success, reject) {
-    var currReject = function () {
-      reject()
-      arr.shift()
-      if (arr.length) async(arr[0], success, currReject)
-    }
-
-    async(arr[0], success, currReject)
-  }
-
-  asyncLoadWithFallBack(
-    [
-      'https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js',
-      'https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js',
-      "/lib/webfontloader.min.js",
-    ],
-    asyncCb,
-    asyncErr
-  )
-</script>
-
-            <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
-            <div class="container container-unloaded">
-                <main class="main post-page">
-    <article class="article-entry">
+      
         <p>《烧烤》</p>
 <p>戚少商在吃烤串。<br>不管他隔桌的人怎么划拳、呐喊、碰杯，戚少商只是闷头苦吃，这也是有原因的：一则因为没有人与他碰杯，又一则因为他只有一条胳膊。只要他去端酒杯、或者与人划拳，那么就留不出一只手再去拿羊肉串，而戚少商真的只是来吃烤串的。<br>他坐的烧烤摊和广东最大的酒楼之隔一条马路，车辆往来络绎不绝，戚少商不仅知道这所酒楼，还曾和此间的客家老板称兄道弟，因为他年轻时无数次地出入这里——和他的七位把兄弟，日复一日聚在里面喝酒、赌博、闹是非、争选举。天网恢恢，而他脚下方寸是法外之地，那时湖广两粤，一切大的生意都要在这里拍板，请“龙头”定夺。<br>酒楼的大堂里突然爆发出一阵喧哗，一群人推推搡搡地向外移动，准确来说是一群人围绕着一个人，像推皮球似的推搡他——戚少商只一眼就认出了那是顾惜朝。不只是因为戚少商曾经跟他很熟，还因为戚少商赌咒发誓过，就是哪一天顾惜朝死了，给砍成肉块，烧成灰，他也决然不会忘记顾惜朝的样子。有人用粤语讲了一句下流话，其他人哄堂大笑，笑声里夹着当中顾惜朝微弱的争辩声——除却气力不继，堪称是字正腔圆的普通话。他不会讲粤语。<br>顾惜朝生在江南，长在江南，南方腔浓重，说起普通话来，该硬的地方软，该软的地方虚。没想到跟了蔡京不到一年，说话已经十足像个地道的汴京人。戚少商猛地对着瓶嘴灌了一口，有点想笑，想当年他们总爱逗顾公子开腔，听他讲话似弹棉花，然后满座哗笑。顾惜朝二十出头遇到戚少商，做了连云帮的入幕之宾，一年由草鞋升至白纸扇，龙头对他礼遇高似香主，除却未赏廿一字头，几与龙头平起平坐，红棍见他也要礼让三分。人生在世，要权要钱，顾惜朝够运至此，还有什么是他戚少商没给的？又有什么是他给不了的？在连云分崩离析后的几年里，戚少商幡然醒悟——是名啊！<br>两粤失了龙头坐镇，群龙无首，近年来帮派火拼无算，手段残暴下作兼而有之。蔡京深以为患，四大探长南下已成定局，先遣义子顾惜朝入粤设宴拉拢可用之将、把持两粤的两大帮派只讲江湖义气，不理其他，而顾惜朝此人，求的是出将入相，做的是官样文章，对江湖帮派的规矩半通不通，此举无异于把顾惜朝推进火坑。大堂里一言不合，即告刀兵相向，顾惜朝身手不弱，眼下却全无还手之力，戚少商余光一扫，便知道他席间的酒里被下过料。这场为顾公子设下的鸿门宴煞费苦心，远在汴京的蔡相又鞭长莫及，本来此局万无一失，可是戚少商出手了。<br>戚少商猛地站起，从烧烤摊上抄起一瓶啤酒，然后大步流星地走过马路，很有些孤胆英雄的气概，行人和车辆自觉地为他让开一条通道，摩西分海，玄奘取经。那边酒楼号称亚洲第一，楼宇高耸入云，这边烧烤摊位龟缩在待拆迁的破民房间，碳烤羊肉串的烟气冲天，一个斗大的猩红“拆”字夺人眼球。一千年前一定也有这样一位孤胆奇侠从烟熏火燎里大步流星而来，为救一人而当百骑，一样的独臂，剑眉，有杀气。<br>戚少商拦在顾惜朝身前，沉着地以单手搀了他一把，顾惜朝仓促借力站稳，他一旦直起腰杆，就又变回顾公子了，面容温润如玉，神色却冷若霜雪，现出一种不怒自威的气势。这几年顾惜朝居移气，养移体，眉目间隐隐透出上位者的威严。药效使他神志模糊，用了一会儿才看清拦在他面前的人是戚少商。顾公子的脸色白了一霎那，然后不愿再看似的，微微闭住了眼睛，他喃喃：“是你，戚……”<br>戚少商站在那里未发一语，身形落括，面有风霜。他面对成聚拢之势的人群，抡起手里的啤酒瓶，照着大堂里的酒桌砸下去，酒瓶应声迸裂，玻璃碴稀里哗啦碎了一地，戚少商手里只剩半边酒瓶，锯齿状的边缘锋利如刃，他握它的姿态更似握一把刀。人群里一阵骚动，有人劈面便骂：死扑街，咁多事！你宜家走，我哋唔为难你。<br>戚少商早年出来闯荡，倒有五年都在佛山的拳馆学艺，颇向粤广好友学过几句，他歪着头看一众人，眼睛笑笑的，太久没理的头发飘逸地披在眉角，因着面容风流，他的混不吝也有一股英雄气。戚少商说话，一字一句，很温柔，很清晰：我今日就要带他走，我睇下边个够胆拦我。<br>聚拢的打手彼此面面相觑，他们或握刀或持棍，兴许有人的腰里还揣着枪，可是面对拎着一个破酒瓶、只剩一条胳膊的戚少商，却纷纷感到了畏惧。这些人大多是和义胜新收的马仔，无一人知晓二十年前叱咤港岛的龙头戚，可是人的本能却不会作伪。<br>马仔迟疑着为两个人让开一条道，戚少商脸上殊无表情，心里也是一样的漠然，他想，也不知一千年前的侠客背后翼护的人是谁——也是残害他手足兄弟、断他一臂、把他逼上绝路的人吗？<br>他和顾惜朝沉默着走了一段路，月光之下人影被拉得瘦长，最后他们来到了一片开阔的街道，顾惜朝推开他，坐到了最低的一级台阶上。戚少商看到他的额发被汗水打透了，湿漉漉地黏在眉角，这个人苍白、单薄，疲倦，大口大口地喘气。戚少商恍惚了一刹那，他想起以前那个文秀，腼腆，却眼神有锋的书生。不知道过了多久，顾惜朝缓了一口气，仍低着头，道：多谢。药效未过，他的嗓音仍旧喑哑不清，两瓣很薄的嘴唇动动，又重复了一遍，多谢你，是我对不起。<br>假若过去的记忆同时在戚少商身上苏醒，但凡他还有一丝血性，他都该大步上前，扼住顾惜朝的咽喉，直到这个狼子野心之人咽下最后一口气，然后兄弟的血恨与他的大仇将一一得报，都将随着这个人的死而一笔勾销。<br>他看着顾惜朝，看了很久，一直到这张面孔在他眼里变得陌生。戚少商突然笑了：做兄弟，有今生，冇来世。没所谓了，真的。然后他把剩下的那只手揣进口袋，摇摇晃晃地走开。</p>
 
-    </article>
-    <!-- license -->
-    
-        <div class="license-wrapper">
-            <p>Author：<a href="http://namelessriver.github.com">FLUFFY LION</a>
-            <p>Link：<a href="http://namelessriver.github.com/2023/12/06/amysterybox-1/">http://namelessriver.github.com/2023/12/06/amysterybox-1/</a>
-            <p>Publish date：<a href="http://namelessriver.github.com/2023/12/06/amysterybox-1/">December 6th 2023, 4:58:15 pm</a>
-            <p>Update date：<a href="http://namelessriver.github.com/2023/12/06/amysterybox-1/">December 6th 2023, 5:02:06 pm</a>
-            <p>License：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
-        </div>
-    
-    <!-- paginator -->
-    <ul class="post-paginator">
-        <li class="next">
-            
-                <div class="nextSlogan">Next Post</div>
-                <a href="/2023/12/06/amysterybox-2/" title="龙族/源楚源">
-                    <div class="nextTitle">龙族/源楚源</div>
-                </a>
-            
-        </li>
-        <li class="previous">
-            
-                <div class="prevSlogan">Previous Post</div>
-                <a href="/2023/12/02/dairy7/" title="And then she smiled">
-                    <div class="prevTitle">And then she smiled</div>
-                </a>
-            
-        </li>
-    </ul>
-    <!-- comment -->
-    
-        <div class="post-comment">
-            <!-- 来必力 City 版安装代码 -->
-
-
-            
-
-            
-
-            
-
-            <!-- utteranc评论 -->
-
-
-            <!-- partial('_partial/comment/changyan') -->
-            <!--PC版-->
-
-
-            
-            
-
-            
-
-        </div>
-    
-    <!-- timeliness note -->
-    <!-- idea from: https://hexo.fluid-dev.com/posts/hexo-injector/#%E6%96%87%E7%AB%A0%E6%97%B6%E6%95%88%E6%80%A7%E6%8F%90%E7%A4%BA -->
-    
-    <!-- Mathjax -->
-    
-</main>
-
-                <!-- profile -->
-                
-            </div>
-            <footer class="footer footer-unloaded">
-    <!-- social  -->
-    
-        <div class="social">
-            
-    
-        
-            
-                <a href="mailto:12345@qq.com" class="iconfont-archer email" title=email ></a>
-            
-        
-    
-        
-            
-                <a href="//github.com/fi3ework" class="iconfont-archer github" target="_blank" title=github></a>
-            
-        
-    
-        
-            
-                <span class="iconfont-archer wechat" title=wechat>
-                    
-                    <img class="profile-qr" src="/assets/example_qr.png" />
-                </span>
-            
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-
-
-        </div>
-    
-    <!-- powered by Hexo  -->
-    <div class="copyright">
-        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
     </div>
-    <!-- website approve for Chinese user -->
-    
-    <!-- 不蒜子  -->
-    
-        <div class="busuanzi-container">
-            
-             
-                <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
-            
-        </div>
-    	
-</footer>
 
-        </div>
-        <!-- toc -->
-        
-            <div class="toc-wrapper toc-wrapper-loding" style=
-
-
-
-
-
-
-
-    top:50vh;
-
->
-                <div class="toc-catalog">
-                    <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
-                </div>
-                
-            </div>
-        
-        <!-- sidebar -->
-        <div class="sidebar sidebar-hide">
-    <ul class="sidebar-tabs sidebar-tabs-active-0">
-        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
-        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
-        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
-    </ul>
-    <div class="sidebar-content sidebar-content-show-archive">
-        <div class="sidebar-panel-archives">
-    <!-- 在 ejs 中将 archive 按照时间排序 -->
-    
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-    
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
     
     
     
-    
-    <div class="total-and-search">
-        <div class="total-archive">
-        Total : 26
-        </div>
-        <!-- search  -->
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E4%BA%A6%E6%9C%89%E4%BA%BA%E9%80%A0%E8%A8%AA%E9%81%8E%E9%80%99%E7%89%87%E5%8E%9F%E9%87%8E/" rel="tag"># 亦有人造訪過這片原野</a>
+          </div>
+
         
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/12/02/dairy7/" rel="prev" title="And then she smiled">
+      <i class="fa fa-chevron-left"></i> And then she smiled
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/12/06/amysterybox-2/" rel="next" title="龙族/源楚源">
+      龙族/源楚源 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
+      </footer>
     
-    <div class="post-archive">
-    
-        
-            
-            
-            <div class="archive-year"> 2023 </div>
-            <ul class="year-list">
-            
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/12</span>
-            <a class="archive-post-title" href="/2023/12/12/dairy8/">diary</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/11</span>
-            <a class="archive-post-title" href="/2023/12/11/amysterybox-12/">amysterybox</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/11</span>
-            <a class="archive-post-title" href="/2023/12/11/study1/">study1</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span>
-            <a class="archive-post-title" href="/2023/12/09/bartending-record/">bartending record</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span>
-            <a class="archive-post-title" href="/2023/12/09/movies/">movies</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span>
-            <a class="archive-post-title" href="/2023/12/09/game/">要紧的不只是成为一个人</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/06</span>
-            <a class="archive-post-title" href="/2023/12/06/VA-11-HALL-A/">Hexo主题编写随记</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/06</span>
-            <a class="archive-post-title" href="/2023/12/06/amysterybox-10/">ff14/光暗光</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/06</span>
-            <a class="archive-post-title" href="/2023/12/06/amysterybox-2/">龙族/源楚源</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/06</span>
-            <a class="archive-post-title" href="/2023/12/06/amysterybox-11/">咒术回战/五夏五</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/06</span>
-            <a class="archive-post-title" href="/2023/12/06/amysterybox-5/">JOJO的奇妙冒险/承花承</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/06</span>
-            <a class="archive-post-title" href="/2023/12/06/amysterybox-4/">古原人设/original character</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/06</span>
-            <a class="archive-post-title" href="/2023/12/06/amysterybox-3/">哈利波特/犬狼犬</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/06</span>
-            <a class="archive-post-title" href="/2023/12/06/amysterybox-6/">金光佈袋戲/風千風</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/06</span>
-            <a class="archive-post-title" href="/2023/12/06/amysterybox-7/">伪装者/台风</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/06</span>
-            <a class="archive-post-title" href="/2023/12/06/amysterybox-8/">古原original character</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/06</span>
-            <a class="archive-post-title" href="/2023/12/06/amysterybox-9/">我的团长我的团/孟烦了个人向</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/06</span>
-            <a class="archive-post-title" href="/2023/12/06/amysterybox-1/">逆水寒/戚少商个人</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/02</span>
-            <a class="archive-post-title" href="/2023/12/02/dairy6/">从0开始的异世界机器学习生活（1）</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/02</span>
-            <a class="archive-post-title" href="/2023/12/02/dairy7/">And then she smiled</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/05</span>
-            <a class="archive-post-title" href="/2023/10/05/dairy3/">爱人寂寥地出生在1874</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/30</span>
-            <a class="archive-post-title" href="/2023/09/30/dairy2/">假如一天只你共我</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/30</span>
-            <a class="archive-post-title" href="/2023/09/30/dairy5/">To risk everything</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/23</span>
-            <a class="archive-post-title" href="/2023/09/23/dairy4/">肚子饿的时候抬头看星星吧！</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/17</span>
-            <a class="archive-post-title" href="/2023/09/17/aboutfood1/">生存确认</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/16</span>
-            <a class="archive-post-title" href="/2023/09/16/dairy1/">也可以是鱼油纪年</a>
-        </li>
-    
-    </div>
-</div>
+  </article>
+  
+  
+  
 
-        <div class="sidebar-panel-tags">
-    <div class="sidebar-tags-name">
-        
-            <span class="sidebar-tag-name" data-tags="索拉里斯香蕉纪年">
-                <span class="iconfont-archer">&#xe606;</span>
-                索拉里斯香蕉纪年
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="鲁加环游艾欧泽亚美食评测">
-                <span class="iconfont-archer">&#xe606;</span>
-                鲁加环游艾欧泽亚美食评测
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="太阳黑子和克拉拉">
-                <span class="iconfont-archer">&#xe606;</span>
-                太阳黑子和克拉拉
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="亦有人造訪過這片原野">
-                <span class="iconfont-archer">&#xe606;</span>
-                亦有人造訪過這片原野
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="VA-11 HALL-A">
-                <span class="iconfont-archer">&#xe606;</span>
-                VA-11 HALL-A
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="献杯">
-                <span class="iconfont-archer">&#xe606;</span>
-                献杯
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="Dr. Strangelove:How I Learned to Stop Worrying and Love the Bomb">
-                <span class="iconfont-archer">&#xe606;</span>
-                Dr. Strangelove:How I Learned to Stop Worrying and Love the Bomb
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="地は冷たく、空は遠く">
-                <span class="iconfont-archer">&#xe606;</span>
-                地は冷たく、空は遠く
-            </span>
-        
-    </div>
-    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
-    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
-        缺失模块，请参考主题文档进行安装配置：https://github.com/fi3ework/hexo-theme-archer#%E5%AE%89%E8%A3%85%E4%B8%BB%E9%A2%98
-    </div> 
-    <div class="sidebar-tags-list"></div>
-</div>
 
-        <div class="sidebar-panel-categories">
-    <div class="sidebar-categories-name">
-    
-    </div>
-    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
-    <div class="sidebar-categories-list"></div>
-</div>
 
-    </div>
-</div>
+          </div>
+          
 
-        <!-- site-meta -->
-        <script>
-    var siteMetaRoot = "/"
-    if (siteMetaRoot === "undefined") {
-        siteMetaRoot = '/'
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
     }
-    var siteMeta = {
-        url: "http://namelessriver.github.com",
-        root: siteMetaRoot,
-        author: "FLUFFY LION"
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
     }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
 </script>
 
-        <!-- import experimental options here -->
-        <!-- Custom Font -->
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">FLUFFY LION</p>
+  <div class="site-description" itemprop="description">北京→柏林 经济舱</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
 
 
-        <!-- main func -->
-        <script src="/scripts/main.js?v=20211217"></script>
-        <!-- dark mode -->
-        <script src="/scripts/dark.js?v=20211217"></script>
-        <!-- fancybox -->
-        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" defer></script>
-        <!-- algolia -->
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
         
-        <!-- busuanzi -->
+
         
-            <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">FLUFFY LION</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
         
-        <!-- CNZZ -->
-        
-        <!-- async load share.js -->
-        
-            <script src="/scripts/share.js?v=20211217" async></script>
-        
-        <!-- mermaid -->
-        
-    </body>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
 </html>

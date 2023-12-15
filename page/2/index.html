@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!-- title -->
-
-
-    
-
-<!-- keywords -->
-
-
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="author" content="FLUFFY LION">
-    <meta name="renderer" content="webkit">
-    <meta name="copyright" content="FLUFFY LION">
-    
-        <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
-    
-    <meta name="description" content="北京→柏林 经济舱">
-    <meta name="description" content="北京→柏林 经济舱">
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"namelessriver.github.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="北京→柏林 经济舱">
 <meta property="og:type" content="website">
 <meta property="og:title" content="鱼油纪年">
 <meta property="og:url" content="http://namelessriver.github.com/page/2/index.html">
@@ -29,1563 +30,942 @@
 <meta property="article:author" content="FLUFFY LION">
 <meta property="article:tag" content="夜航船，日记，做饭记录">
 <meta name="twitter:card" content="summary">
-    <meta http-equiv="Cache-control" content="no-cache">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <link rel="icon" href="/assets/favicon.ico">
-    
-    <title>fi3ework&#39;s Studio</title>
-    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
-/* This file is meant as a standalone workflow for
-- testing support for link[rel=preload]
-- enabling async CSS loading in browsers that do not support rel=preload
-- applying rel preload css once loaded, whether supported or not.
-*/ -->
-<script>
-    (function (w) {
-        'use strict'
-        // rel=preload support test
-        if (!w.loadCSS) {
-            w.loadCSS = function () {}
-        }
-        // define on the loadCSS obj
-        var rp = (loadCSS.relpreload = {})
-        // rel=preload feature support test
-        // runs once and returns a function for compat purposes
-        rp.support = (function () {
-            var ret
-            try {
-                ret = w.document.createElement('link').relList.supports('preload')
-            } catch (e) {
-                ret = false
-            }
-            return function () {
-                return ret
-            }
-        })()
 
-        // if preload isn't supported, get an asynchronous load by using a non-matching media attribute
-        // then change that media back to its intended value on load
-        rp.bindMediaToggle = function (link) {
-            // remember existing media attr for ultimate state, or default to 'all'
-            var finalMedia = link.media || 'all'
+<link rel="canonical" href="http://namelessriver.github.com/page/2/">
 
-            function enableStylesheet() {
-                link.media = finalMedia
-            }
 
-            // bind load handlers to enable media
-            if (link.addEventListener) {
-                link.addEventListener('load', enableStylesheet)
-            } else if (link.attachEvent) {
-                link.attachEvent('onload', enableStylesheet)
-            }
-
-            // Set rel and non-applicable media type to start an async request
-            // note: timeout allows this to happen async to let rendering continue in IE
-            setTimeout(function () {
-                link.rel = 'stylesheet'
-                link.media = 'only x'
-            })
-            // also enable media after 3 seconds,
-            // which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
-            setTimeout(enableStylesheet, 3000)
-        }
-
-        // loop through link elements in DOM
-        rp.poly = function () {
-            // double check this to prevent external calls from running
-            if (rp.support()) {
-                return
-            }
-            var links = w.document.getElementsByTagName('link')
-            for (var i = 0; i < links.length; i++) {
-                var link = links[i]
-                // qualify links to those with rel=preload and as=style attrs
-                if (
-                    link.rel === 'preload' &&
-                    link.getAttribute('as') === 'style' &&
-                    !link.getAttribute('data-loadcss')
-                ) {
-                    // prevent rerunning on link
-                    link.setAttribute('data-loadcss', true)
-                    // bind listeners to toggle media back
-                    rp.bindMediaToggle(link)
-                }
-            }
-        }
-
-        // if unsupported, run the polyfill
-        if (!rp.support()) {
-            // run once at least
-            rp.poly()
-
-            // rerun poly on an interval until onload
-            var run = w.setInterval(rp.poly, 500)
-            if (w.addEventListener) {
-                w.addEventListener('load', function () {
-                    rp.poly()
-                    w.clearInterval(run)
-                })
-            } else if (w.attachEvent) {
-                w.attachEvent('onload', function () {
-                    rp.poly()
-                    w.clearInterval(run)
-                })
-            }
-        }
-
-        // commonjs
-        if (typeof exports !== 'undefined') {
-            exports.loadCSS = loadCSS
-        } else {
-            w.loadCSS = loadCSS
-        }
-    })(typeof global !== 'undefined' ? global : this)
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'en'
+  };
 </script>
 
-    <style type="text/css">
-    @font-face {
-        font-family: 'Oswald-Regular';
-        src: url("/font/Oswald-Regular.ttf");
-    }
+  <title>鱼油纪年</title>
+  
 
-    body {
-        margin: 0;
-    }
 
-    header,
-    footer,
-    .back-top,
-    .sidebar,
-    .container,
-    .site-intro-meta,
-    .toc-wrapper {
-        display: none;
-    }
 
-    .site-intro {
-        position: relative;
-        z-index: 3;
-        width: 100%;
-        /* height: 50vh; */
-        overflow: hidden;
-    }
 
-    .site-intro-placeholder {
-        position: absolute;
-        z-index: -2;
-        top: 0;
-        left: 0;
-        width: calc(100% + 300px);
-        height: 100%;
-        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
-        background-position: center center;
-        transform: translate3d(-226px, 0, 0);
-        animation: gradient-move 2.5s ease-out 0s infinite;
-    }
 
-    @keyframes gradient-move {
-        0% {
-            transform: translate3d(-226px, 0, 0);
-        }
-        100% {
-            transform: translate3d(0, 0, 0);
-        }
-    }
-</style>
 
-    <link rel="preload" href="/css/style.css?v=20211217" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="/css/dark.css?v=20211217" as="style">
-    <link rel="stylesheet" href="/css/dark.css">
-    <link rel="stylesheet" href="/css/mobile.css?v=20211217" media="(max-width: 960px)">
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" as="script">
-    <link rel="preload" href="/scripts/main.js?v=20211217" as="script">
-    <link rel="preload" href="/scripts/dark.js?v=20211217" as="script">
-    <link rel="preload" href="/font/Oswald-Regular.ttf" as="font" crossorigin>
-    <link rel="preload" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" as="font" crossorigin>
-    <!-- algolia -->
-    
-    <!-- 百度统计  -->
-    
-    <!-- Google tag (gtag.js) -->
-    
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-    <script type="text/javascript">
-        if (typeof window.$ == undefined) {
-            console.warn('jquery load from jsdelivr failed, will load local script')
-            document.write('<script src="/lib/jquery.min.js" />')
-        }
-    </script>
-    
-        <body class="home-body">
-    
-        <!-- header -->
-        <header class="header header-mobile index-header">
-    <!-- top read progress line -->
-    <div class="header-element">
-        <div class="read-progress"></div>
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-    <!-- sidebar menu button -->
-    <div class="header-element">
-        
-            <div class="header-sidebar-menu">
-        
-            
-                <div style="padding-left: 1px;">&#xe775;</div>
-            
-        </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">鱼油纪年</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
     </div>
-    <!-- header actions -->
-    <div class="header-actions">
-        <!-- theme mode switch button -->
-        <span class="header-theme-btn header-element">
-            <i class="fas fa-adjust"></i>
-        </span>
-        <!-- back to home page text -->
-        <span class="home-link header-element">
-            <a href=/>fi3ework's Studio.</a>
-        </span>
-    </div>
-    <!-- toggle banner for post layout -->
-    
-</header>
-
-        <!-- fixed footer -->
-        <footer class="footer-fixed index-footer-fixed">
-    <!-- back to top button -->
-    <div class="footer-fixed-element">
-        
-            <div class="back-top back-top-hidden">
-        
-        
-            <div>&#xe639;</div>
-        
-        </div>
-    </div>
-</footer>
-
-        <!-- wrapper -->
-        <div class="wrapper">
-            <div class="site-intro" style="
-
-
-
-
-
-
-
-    height:50vh;
-
-">
-    
-    <!-- 主页  -->
-    
-        
-    <!-- 文章页  -->
-    
-    <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/intro/index-bg.jpg)"></div>
-    <div class="site-intro-meta">
-        <!-- 标题  -->
-        <h1 class="intro-title">
-            <!-- 主页  -->
-            
-                fi3ework's Studio.
-            <!-- 文章页  -->
-            
-        </h1>
-        <!-- 副标题 -->
-        <p class="intro-subtitle">
-            <!-- 主页副标题  -->
-            
-                
-                    it's better to burn out than to fade away
-                
-            <!-- 文章页  -->
-            
-        </p>
-        <!-- 文章页 meta -->
-        
-    </div>
+  </div>
 </div>
 
-            <script>
-  // get user agent
-  function getBrowserVersions() {
-    var u = window.navigator.userAgent
-    return {
-      userAgent: u,
-      trident: u.indexOf('Trident') > -1, //IE内核
-      presto: u.indexOf('Presto') > -1, //opera内核
-      webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
-      gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
-      mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
-      ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
-      android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
-      iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
-      iPad: u.indexOf('iPad') > -1, //是否为iPad
-      webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
-      weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
-      uc: u.indexOf('UCBrowser') > -1, //是否为android下的UC浏览器
-    }
-  }
-  var browser = {
-    versions: getBrowserVersions(),
-  }
-  console.log('userAgent: ' + browser.versions.userAgent)
 
-  // callback
-  function fontLoaded() {
-    console.log('font loaded')
-    if (document.getElementsByClassName('site-intro-meta')) {
-      document
-        .getElementsByClassName('intro-title')[0]
-        .classList.add('intro-fade-in')
-      document
-        .getElementsByClassName('intro-subtitle')[0]
-        .classList.add('intro-fade-in')
-      var postIntros = document.getElementsByClassName('post-intros')[0]
-      if (postIntros) {
-        postIntros.classList.add('post-fade-in')
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://namelessriver.github.com/2023/12/06/amysterybox-8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="FLUFFY LION">
+      <meta itemprop="description" content="北京→柏林 经济舱">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="鱼油纪年">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/12/06/amysterybox-8/" class="post-title-link" itemprop="url">古原original character</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-12-06 17:32:10 / Modified: 17:34:27" itemprop="dateCreated datePublished" datetime="2023-12-06T17:32:10+01:00">2023-12-06</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>喜悲苦乐，恩仇爱恨，曾执迷过才能不再执迷，曾舍不得才能全数舍得。<br>冯砚的一举一动都在眼前次第浮现，手谈之际眼角的笑影，情热时泛红的耳垂，一幕幕流畅不滞，纤若毫发。他年少入主剑阁，读书习武，参悟剑道，同冯砚少有分离，那是上天厚待。而他少时自诩一心向道，人间风月无啻尘土，而今水去云回，那些赤子冰心的，年少疏狂的，天真爱悦的，全部相会无期。<br>谢潮来阖住双目，涩然笑了一声，掌中利器作阵阵嗡鸣，峭壁之下，剑意催发，气劲与山风争相鼓荡起袍袖。<br>——不曾出口的白首之盟，今日已践。<br>他陡然睁开眼，光华流转，威势凛然，面北从容地拜了一拜，随之洒然步向石崖，再不回顾。<br>冯砚那一天醒得格外早，自昨日从谢潮来房间辞别出来，他始终有些心神不定。长夜辗转反侧，才睡了半个时辰，又被梦里一道如虹的剑光惊醒，满背冷汗。冯砚知谢潮来至深，已将事情原貌猜得八九不离，两位剑道绝世高手过招，毫厘之差便是生死攸关，最终范慈悲是棋差一着，还是已存死志，未出全力，往事已随他陨落深涧而无从知晓了。但对于谢潮来，这一场论剑的胜利，直比教他去死还要难以承担些。冯砚夜里在廊前独自走了几回，这些年，愈是知道他的孤独，他的骄傲，愈是可以想见他的苦闷悲哀。一身一剑攀武道巅峰，叩问天命，师长前辈尽已零落，同行友人相识无多，范慈悲死后，这世上怕是再没有一个人能与他同登论剑峰。冯砚又想起梦里那道剑光，如虹如练，照彻九州，如一个传说……而传说总是不朽的。冯砚抬头看着中天的圆月，心中默默唤了一声——阁主。<br>谁知这一天谢潮来半点动静也无，他遣去暗中照看的仆从已回了三次“未见异常”，任他焦躁也是无法。及至晌午，好容易盼来白鹭汀，冯砚立时带着她去了无尽园。心中默诵已经滚瓜烂熟的说辞，鹭汀正突破“入神”一境，修习不可耽搁，请阁主好歹指点两句……<br>孰料他在园子门口被人拦下，侍从语焉不详，只说谢潮来“闭门谢客”，拉扯了几句，冯砚无名火上窜，声音陡地拔高：“不见外客，总要见我，我今天无论如何也要看一眼他！” 话毕自己都觉愕然，心中悲酸，他始终严阵以待着，生怕说错两句泄露心事，许多年来两人暗地较劲，表面又都一等一光风霁月，开诚无私……他又何尝不知道呢，谢潮来一直在等他开口。两位侍从交换一个眼神，低头不语，最后那位他亲自安排的童子走上前，怯怯说：“阁主夜里便往有极崖去了，剑谱与一应卷宗，都在屋里，阁主吩咐不要告诉……”<br>冯砚头脑昏眩一刻，好似五感全失，只有左胸闷闷作痛，他感到一边的鹭汀紧张地抓住他的左手，勉力吸一口气，艰涩开口：“……什么时候走的。” 童子面色犯难：“刚、刚入夜。”<br>冯砚退了两步，放松开鹭汀的手，听到她慌慌安慰：“师叔，我们立刻去有极崖，把师父追回来就好了……” 他心中五味杂陈，想抬起手抚一抚鹭汀的头发，却疲倦得连一根小指也无法抬动：“……好，我们去有极崖。”<br>乘剑阁最神骏的良驹，驰至有极崖也要两个时辰，何况冯砚大致扫过一遭，谢潮来动身时只是选了一匹驽马，只会在路上消耗更久。可是，他心中倏忽有个声音响起，一板一眼地指正，倘使这个人要走，是谁也拦不住的。<br>两侧景物急掠而过，一行二人赶到有极崖下，暮色已在湖面上淡淡铺开。不同于往日草木凄清，此时崖下已聚拢起黑压压的人群，还有人同他们一样纵马疾驰而来，想要挤进摩肩擦踵的人群当中。举目上眺，高不可攀的峭壁之上，有刀刻斧凿一般分明的线条，竟是人持利器所劈刻而出。气劲纵横，轨迹看似纷乱，细看又暗合学理。众人有持谱抄录者，有阖目苦思者，更多的人盘膝坐于地下，仰着脖子，目光苦苦追着崖上的线条。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://namelessriver.github.com/2023/12/06/amysterybox-7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="FLUFFY LION">
+      <meta itemprop="description" content="北京→柏林 经济舱">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="鱼油纪年">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/12/06/amysterybox-7/" class="post-title-link" itemprop="url">伪装者/台风</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-12-06 17:28:31 / Modified: 17:31:21" itemprop="dateCreated datePublished" datetime="2023-12-06T17:28:31+01:00">2023-12-06</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>《学生》<br>我只知道老师姓王，而且连这也有可能是假的。<br>“任务开始，一步一刀锋，掉下去的都是轻信的人，所以……不要相信任何人，也不要相信别人想让你看见的事。”<br>“只能信自己？” 柑橘放烂了，剥皮时汁液流了我满手，我一边去揩，一边笑着问他。<br>“自己也不可信。” 老师的眼睛像一泓寒潭，平静、冰冷，还有不可言喻的悲哀。</p>
+<p>到了今天，我认为自己算是领会了他的意思。受一次敌人的严刑审讯，就被剥去一层皮，战友的背叛又剥去一层，血肉模糊的，半只脚迈进鬼门关，又收回来。有时我靠着藤椅睡过去，突然打一个激灵，又满头冷汗地醒来。直面过黑洞洞的枪口，架在颈根上的利刃；和特高科作生死一线的周旋，最险是那次落入汪伪政府76号的魔窟。</p>
+<p>不曾求饶，不曾落汗，可是这些梦魇于几十年后汹汹地找上了我的门，求生和成仁之间，只有毫厘之差，自己果真也不可信……真奇怪，那时怎么不知道怕呢？</p>
+<p>那时我甫至军校，毛头小子，不知天高地厚。眼看着心心念念的汽车和小洋楼换了一排排窄小的营房，日头下发出土腥味的操场，少不得一通臧否。<br>我们和家里通电话，到我了，一个电话拨过万水千山去。我像往常那样持着听筒，仍对我妈撒娇撒痴，只是留洋出美的话不再说。她起先是小声安慰，说对不起我，后来竟在低低啜泣了，我臊着脸哄了两句，最后气急败坏起来：妈！我走了。果真撂了电话就走。同期的学生在背后掩住嘴，窃窃地笑，他们明面上叫我少爷兵，贪生怕死，背地里还翻来覆去地笑那一声“妈”，像绵羊叫，我一赌气，从此再也没往家里挂过电话。</p>
+<p>到了半夜，集合哨响了，我们慌慌张张一齐赶去操场，大家都穿白的短袖衫，在夜风里打寒颤。两个教官一左一右，老师站在他们中间。月光稀稀照着地上的人，那光很柔，很渺茫，我们都看不清衣上的军章，却都下意识地屏息盯着他，心底隐隐知道这是一位“长官”。 老师背手站在原地，气度俨然如一座山，他的声音很厉，训了一番话，最后说：“升官发财请走他处，贪生怕死——” 冷峻的目光扫过来，四个字斩钉截铁似的，“勿入斯门。”</p>
+<p>同期学员五百来人，我跟他的时间最久。他每天塞我一个苹果，有时是柑橘，盛饭时我的碗里冒个小尖，菜汤里浮的油水仿佛也更扎实一些，我坦坦接过来，狼吞虎咽，如数吃了。前一个月不是没犯过嘀咕，过了一个月，我的枪靶能连中十环，监听和破译正确率不在职业情报员之下，审讯课险些套出了教官的底子——主考是老师。我在他眼皮底下，把情报递给了负责联络上线的同学。当天晚上我睡不着觉，把脸藏在被子底下吃吃地笑，就在他眼皮底下……</p>
+<p>凭本事换前程，换青眼有加，换一顿饱饭，羞吗？从此我不仅坦坦，还主动问他要第二个苹果，他凝视我片刻，把自己的那只轻轻放在我手里，眼神闪动一下，似乎是笑，又好像没有波澜。</p>
+<p>《就日》<br>入学之初，那张四四方方的报告单上经常有我的名字，多为“出言不逊，顶撞教官”，偶尔“违反校规，过时未至”。老师沉着脸看完，冷峻的眼神刻刀一样摹出一个青年：自由散漫，莽撞冲动，有恃无恐，主意也不少。他在操练队伍里留下我，同学到点散去，只我一个站在毒辣日头下，令我归队时，我心中有气，胳膊一甩要往队列里跨，被老师一脚踹翻在地。众目睽睽，罚站时没流的热汗立时淌下来了，我咬着牙往起爬，又被他踹翻，脸砸起一层土。我终于爬起来，手背上青筋浮凸，梗着脖子和他对峙，只短短功夫，他背身走了，我那天晚上又没吃上饭。</p>
+<p>老师的授意下，教官待我格外苛刻，从来有贬无褒。他甚至默许了同期学员对我的孤立，近身格斗课要求两人一组，捉对厮杀，同组的人把我搡到人群中间，不多时便有一肘击或者膝撞，不声不响落在我腰上背上，对面的人扭住我，不让我回头。我只有下去加了倍的苦练，我个头高，身体又练得结实，一两下偷袭打不垮我，只能激起心里那股无名火。下了狠劲甩开同学，听得手腕咯嘣一声，顾不得更多了，我一拳捶在背后使坏的同学脸上，他摔下去，歪头吐出一颗门牙。老师冷眼旁观，没有追我的责。几堂课下来，这些下三滥的手段便再使不出来。</p>
+<p>一天的课上完了，有时老师会站在背阴的地方，挺拔、沉默，他不发一言，甚至不抬眼看我，但的的确确是在等。我和他并着肩走回去，夕阳把人的影子拉得老长，我们进食堂，我照旧狼吞虎咽，老师吃的不算多，偶尔执着筷子的手会顿下来，默默地看我两眼。只有一回，晚饭有一道小牛肉，炒得鲜嫩，我埋头苦吃，一盘菜有多一半进了我的肚子，汤水也没剩下。老师看我的目光有点踟蹰，筷子在碗沿轻轻一磕，似乎想要把菜拨给我。我看了他一眼，腮帮子鼓着，一筷抢下他碗里的肉菜，噎着说：谢谢啊！</p>
+<p>晚上我照旧给自己加练一会儿搏击，对着空气，因着想象不出侵略者的青面獠牙，就把排挤侮蔑我的同学当作无形的靶。前二十年我被父母兄弟娇养，是慷慨激昂的校报编辑，或者上街游行的请愿者，敌人、家仇国恨，于我而言都是一行行报上的铅字。</p>
+<p>夜里暑气散去，我从宿舍里出来，和老师坐在一处。他脸色疲倦，却照旧挺拔坚毅。一天的训练没有折耗我的精神，我热情洋溢，说这说那，多是一些鸡毛蒜皮的琐事，一些不成熟的思想，我把他当了学堂里的先生，一板一眼地求取微言大义，时而举出什么本性、个体、选择……顶着征途的腥风，郁青的麦苗都伏倒在血池里了，个人没有什么容身之地，他一句句驳斥，声音转厉。</p>
+<p>一次吵到不可开交，我气昏了头，说这是军校的惯用伎俩，思想控制，无条件地服从上级，甚至作出非人的牺牲，我最后声嘶力竭地喊：“忘了自己是个有血有肉的人！” 老师用皮带抽了我的脸，一下，两下。我捂着脸，用我自以为最狠、最包含恨意的眼神瞪他，他的胸膛剧烈起伏着，声音却低了下去：“不是忘了，是你深深记着……却仍然选择那么去做。”</p>
+<p>过上几天，炮声轰碎了就日沦亡的故国美梦。日寇铁蹄经行处溅起血色的泥尘，街头巷尾窸窸窣窣“三个月”的议论声和广播响在一处，那时我才恨自己跟老师平白讲了许多废话，倘若早些觉察到敌寇亮出的獠牙——南京保卫战将要打响了。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://namelessriver.github.com/2023/12/06/amysterybox-6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="FLUFFY LION">
+      <meta itemprop="description" content="北京→柏林 经济舱">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="鱼油纪年">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/12/06/amysterybox-6/" class="post-title-link" itemprop="url">金光佈袋戲/風千風</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-12-06 17:24:37 / Modified: 17:27:03" itemprop="dateCreated datePublished" datetime="2023-12-06T17:24:37+01:00">2023-12-06</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>《镖客》</p>
+<p> 一行人在门口有短暂的迟疑，最后仍旧走进了这间单人病房，尽管房间里充满刺鼻的消毒水和薄荷烟混合的奇怪味道。<br>下午的阳光很好，晒得四周暖洋洋的，光线从窗口错落地照进来，空气中浮着一层迟钝的睡意。风逍遥坐在窗台上，两条腿懒散地拖着，自始至终没有抬一下眼，他正专心致志地看远处的一座钟楼，两根手指间夹一根快要烧尽的烟。<br>这是一座湿润的城市，尽管阳光普照，人们呼吸的空气中仍内含饱满的水汽，视线因此变得模糊而且朦胧，那座钟楼也变得湿乎乎的，仿佛它正在融化，像雪水那样淅淅沥沥地向下滴着。<br>金黄色的雪水。</p>
+<p>房间里出现片刻缄默，检察署的人相互看着，终于有人清清嗓子，平板地宣布：“浪飘萍先生，你的不在场证明已被查证系伪造，我们认为，419爆炸案发生时你就在现场，而且有嫌疑取得……”<br>风逍遥轻轻笑了一声。笑声突兀地截断了这句话，另一个声音有些气愤地插进来：“我们根据现场的指纹查明你根本不是浪飘萍，你是谁？”<br>风逍遥终于动了动，烟灰簌簌地从指缝间漏下来，他很怅惘地说：“叱酒当歌何处去，一叶扁舟浪飘萍，如果我不是浪飘萍，我还能是谁呢？”<br>第一个人干巴巴地问：“现场发现了一盘毁损严重的录像，还原后的录像竟然是14年前道域惨案当夜，神啸刀宗宗主就出现在现场，你藏起录像不得，便想方设法将之销毁……为什么，你和刀宗宗主是什么关系？”<br>“你不知道他的名字，还是不敢说？”风逍遥吸进了一口烟，他竟然还在朝窗外看，“笑残锋，千金少。那是我师兄。” 窗外还有墙，墙外有水泥，生铁，钢筋。<br>发问的人一愕，本能地紧逼：“你师兄？他只有一个师弟，这么说你……”</p>
+<p>​屋里突兀响起一声清脆的叮咚，不知道是谁的手机。这一秒有成千上万条短信在信号台之间穿梭，而风逍遥，风逍遥是一条永不消逝的电波。电波就和水泥、生铁和钢筋一样，没有对错，没有好坏，没有信仰，没有批判，也没有痛。风逍遥最后掐灭了那支烟，薄荷味在与强力消毒水的拉锯战中暂获上风，一时间人们鼻翼间充满清爽辛辣的味道。窗外传来鸽子拍打翅膀的声音，轻快地掀起一小股气流，阳光一瞬掠经蓝白相间的病号服，光影飞快竞逐，随后，一切收拢翅膀栖于黯淡。检察署员很惊愕，鸽子挥动翅膀竟具有这么大的力量，掀掉了帽子……不是鸽子，是外面突然刮起了大风，原来这座湿润的、温柔的城市还有如此暴戾的一面么，有人捂着摇摇欲坠的帽子大叫，他，他要掉下去了！——妈的，他要跑！<br>说话的人马上被一把搡开，两个人亮出了手铐，紧急上前去拉风逍遥，他们迫近到距窗台不足一尺的距离，看见风逍遥近在咫尺地笑了。你几乎能看到他眼睫下浮起的笑痕，轻快无拘，一如这个人的命运和他本身，风、逍、遥。<br>他很轻松、很快活地向所有人说：“你捉得住风中的刀么？”<br>帽子终于被吹飞了，定睛再看，窗口已经没有风逍遥的影子，当然楼底的水泥地上也没有。病房里吵作一团，来换点滴瓶的护士不明所以，大声质问谁在抽烟，一团乱麻，只有清脆的叮咚声不依不饶地响。有人接起电话，声嘶力竭地冲着话筒喊：“见到鬼，风中捉刀啊！！” 电话里噼里啪啦的油爆背景音登时减小，大抵是手机被拿远了一些，电话里他的老婆沉默片刻，执着地问：“你今天回不回家吃饭？”</p>
+<p>就像前文提到的那样，这是一座湿润的城市，迎面而来的风里裹着滞重的湿气，绿色植株随风上下摆动饱满欲滴。一条路不知通往哪里，路面坑坑洼洼，阴沟九曲回肠，四下里的人烟极其稀少，只有一辆外表破烂的双排皮卡正在艰难挺进，车里两个人分别坐了主副驾，后座则安详地躺一把长刀。<br>千金少说：“我千金少一生卑鄙……”<br>风逍遥抱住头倒向一边，显得不堪其扰：“嗨呀，早就知啦！”</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://namelessriver.github.com/2023/12/06/amysterybox-5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="FLUFFY LION">
+      <meta itemprop="description" content="北京→柏林 经济舱">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="鱼油纪年">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/12/06/amysterybox-5/" class="post-title-link" itemprop="url">JOJO的奇妙冒险/承花承</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-12-06 17:21:48 / Modified: 17:48:53" itemprop="dateCreated datePublished" datetime="2023-12-06T17:21:48+01:00">2023-12-06</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>有些人一生会经历两场海难，有些人一生只发生两个吻，而花京院典明两者皆是。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/12/06/amysterybox-5/">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://namelessriver.github.com/2023/12/06/amysterybox-4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="FLUFFY LION">
+      <meta itemprop="description" content="北京→柏林 经济舱">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="鱼油纪年">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/12/06/amysterybox-4/" class="post-title-link" itemprop="url">古原人设/original character</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-12-06 17:12:21 / Modified: 17:49:23" itemprop="dateCreated datePublished" datetime="2023-12-06T17:12:21+01:00">2023-12-06</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>又名我那未完待续的面店老板们</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/12/06/amysterybox-4/">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://namelessriver.github.com/2023/12/06/amysterybox-3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="FLUFFY LION">
+      <meta itemprop="description" content="北京→柏林 经济舱">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="鱼油纪年">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/12/06/amysterybox-3/" class="post-title-link" itemprop="url">哈利波特/犬狼犬</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-12-06 17:07:11 / Modified: 17:10:26" itemprop="dateCreated datePublished" datetime="2023-12-06T17:07:11+01:00">2023-12-06</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>献给没有生存下去的诸君。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/12/06/amysterybox-3/">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://namelessriver.github.com/2023/12/06/amysterybox-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="FLUFFY LION">
+      <meta itemprop="description" content="北京→柏林 经济舱">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="鱼油纪年">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/12/06/amysterybox-2/" class="post-title-link" itemprop="url">龙族/源楚源</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-12-06 17:03:21 / Modified: 17:05:34" itemprop="dateCreated datePublished" datetime="2023-12-06T17:03:21+01:00">2023-12-06</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>楚子航又见到了雨夜里的迈巴赫，而这次他仍然是孤身一人。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/12/06/amysterybox-2/">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://namelessriver.github.com/2023/12/06/amysterybox-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="FLUFFY LION">
+      <meta itemprop="description" content="北京→柏林 经济舱">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="鱼油纪年">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/12/06/amysterybox-1/" class="post-title-link" itemprop="url">逆水寒/戚少商个人</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-12-06 16:58:15 / Modified: 17:02:06" itemprop="dateCreated datePublished" datetime="2023-12-06T16:58:15+01:00">2023-12-06</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>《烧烤》</p>
+<p>戚少商在吃烤串。<br>不管他隔桌的人怎么划拳、呐喊、碰杯，戚少商只是闷头苦吃，这也是有原因的：一则因为没有人与他碰杯，又一则因为他只有一条胳膊。只要他去端酒杯、或者与人划拳，那么就留不出一只手再去拿羊肉串，而戚少商真的只是来吃烤串的。<br>他坐的烧烤摊和广东最大的酒楼之隔一条马路，车辆往来络绎不绝，戚少商不仅知道这所酒楼，还曾和此间的客家老板称兄道弟，因为他年轻时无数次地出入这里——和他的七位把兄弟，日复一日聚在里面喝酒、赌博、闹是非、争选举。天网恢恢，而他脚下方寸是法外之地，那时湖广两粤，一切大的生意都要在这里拍板，请“龙头”定夺。<br>酒楼的大堂里突然爆发出一阵喧哗，一群人推推搡搡地向外移动，准确来说是一群人围绕着一个人，像推皮球似的推搡他——戚少商只一眼就认出了那是顾惜朝。不只是因为戚少商曾经跟他很熟，还因为戚少商赌咒发誓过，就是哪一天顾惜朝死了，给砍成肉块，烧成灰，他也决然不会忘记顾惜朝的样子。有人用粤语讲了一句下流话，其他人哄堂大笑，笑声里夹着当中顾惜朝微弱的争辩声——除却气力不继，堪称是字正腔圆的普通话。他不会讲粤语。<br>顾惜朝生在江南，长在江南，南方腔浓重，说起普通话来，该硬的地方软，该软的地方虚。没想到跟了蔡京不到一年，说话已经十足像个地道的汴京人。戚少商猛地对着瓶嘴灌了一口，有点想笑，想当年他们总爱逗顾公子开腔，听他讲话似弹棉花，然后满座哗笑。顾惜朝二十出头遇到戚少商，做了连云帮的入幕之宾，一年由草鞋升至白纸扇，龙头对他礼遇高似香主，除却未赏廿一字头，几与龙头平起平坐，红棍见他也要礼让三分。人生在世，要权要钱，顾惜朝够运至此，还有什么是他戚少商没给的？又有什么是他给不了的？在连云分崩离析后的几年里，戚少商幡然醒悟——是名啊！<br>两粤失了龙头坐镇，群龙无首，近年来帮派火拼无算，手段残暴下作兼而有之。蔡京深以为患，四大探长南下已成定局，先遣义子顾惜朝入粤设宴拉拢可用之将、把持两粤的两大帮派只讲江湖义气，不理其他，而顾惜朝此人，求的是出将入相，做的是官样文章，对江湖帮派的规矩半通不通，此举无异于把顾惜朝推进火坑。大堂里一言不合，即告刀兵相向，顾惜朝身手不弱，眼下却全无还手之力，戚少商余光一扫，便知道他席间的酒里被下过料。这场为顾公子设下的鸿门宴煞费苦心，远在汴京的蔡相又鞭长莫及，本来此局万无一失，可是戚少商出手了。<br>戚少商猛地站起，从烧烤摊上抄起一瓶啤酒，然后大步流星地走过马路，很有些孤胆英雄的气概，行人和车辆自觉地为他让开一条通道，摩西分海，玄奘取经。那边酒楼号称亚洲第一，楼宇高耸入云，这边烧烤摊位龟缩在待拆迁的破民房间，碳烤羊肉串的烟气冲天，一个斗大的猩红“拆”字夺人眼球。一千年前一定也有这样一位孤胆奇侠从烟熏火燎里大步流星而来，为救一人而当百骑，一样的独臂，剑眉，有杀气。<br>戚少商拦在顾惜朝身前，沉着地以单手搀了他一把，顾惜朝仓促借力站稳，他一旦直起腰杆，就又变回顾公子了，面容温润如玉，神色却冷若霜雪，现出一种不怒自威的气势。这几年顾惜朝居移气，养移体，眉目间隐隐透出上位者的威严。药效使他神志模糊，用了一会儿才看清拦在他面前的人是戚少商。顾公子的脸色白了一霎那，然后不愿再看似的，微微闭住了眼睛，他喃喃：“是你，戚……”<br>戚少商站在那里未发一语，身形落括，面有风霜。他面对成聚拢之势的人群，抡起手里的啤酒瓶，照着大堂里的酒桌砸下去，酒瓶应声迸裂，玻璃碴稀里哗啦碎了一地，戚少商手里只剩半边酒瓶，锯齿状的边缘锋利如刃，他握它的姿态更似握一把刀。人群里一阵骚动，有人劈面便骂：死扑街，咁多事！你宜家走，我哋唔为难你。<br>戚少商早年出来闯荡，倒有五年都在佛山的拳馆学艺，颇向粤广好友学过几句，他歪着头看一众人，眼睛笑笑的，太久没理的头发飘逸地披在眉角，因着面容风流，他的混不吝也有一股英雄气。戚少商说话，一字一句，很温柔，很清晰：我今日就要带他走，我睇下边个够胆拦我。<br>聚拢的打手彼此面面相觑，他们或握刀或持棍，兴许有人的腰里还揣着枪，可是面对拎着一个破酒瓶、只剩一条胳膊的戚少商，却纷纷感到了畏惧。这些人大多是和义胜新收的马仔，无一人知晓二十年前叱咤港岛的龙头戚，可是人的本能却不会作伪。<br>马仔迟疑着为两个人让开一条道，戚少商脸上殊无表情，心里也是一样的漠然，他想，也不知一千年前的侠客背后翼护的人是谁——也是残害他手足兄弟、断他一臂、把他逼上绝路的人吗？<br>他和顾惜朝沉默着走了一段路，月光之下人影被拉得瘦长，最后他们来到了一片开阔的街道，顾惜朝推开他，坐到了最低的一级台阶上。戚少商看到他的额发被汗水打透了，湿漉漉地黏在眉角，这个人苍白、单薄，疲倦，大口大口地喘气。戚少商恍惚了一刹那，他想起以前那个文秀，腼腆，却眼神有锋的书生。不知道过了多久，顾惜朝缓了一口气，仍低着头，道：多谢。药效未过，他的嗓音仍旧喑哑不清，两瓣很薄的嘴唇动动，又重复了一遍，多谢你，是我对不起。<br>假若过去的记忆同时在戚少商身上苏醒，但凡他还有一丝血性，他都该大步上前，扼住顾惜朝的咽喉，直到这个狼子野心之人咽下最后一口气，然后兄弟的血恨与他的大仇将一一得报，都将随着这个人的死而一笔勾销。<br>他看着顾惜朝，看了很久，一直到这张面孔在他眼里变得陌生。戚少商突然笑了：做兄弟，有今生，冇来世。没所谓了，真的。然后他把剩下的那只手揣进口袋，摇摇晃晃地走开。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://namelessriver.github.com/2023/12/02/dairy7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="FLUFFY LION">
+      <meta itemprop="description" content="北京→柏林 经济舱">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="鱼油纪年">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/12/02/dairy7/" class="post-title-link" itemprop="url">And then she smiled</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-12-02 20:16:54" itemprop="dateCreated datePublished" datetime="2023-12-02T20:16:54+01:00">2023-12-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-12-06 22:34:22" itemprop="dateModified" datetime="2023-12-06T22:34:22+01:00">2023-12-06</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>献给没有生存下来的诸君，但愿你们已不再记起一切。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/12/02/dairy7/">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://namelessriver.github.com/2023/12/02/dairy6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="FLUFFY LION">
+      <meta itemprop="description" content="北京→柏林 经济舱">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="鱼油纪年">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/12/02/dairy6/" class="post-title-link" itemprop="url">从0开始的异世界机器学习生活（1）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-12-02 20:10:08" itemprop="dateCreated datePublished" datetime="2023-12-02T20:10:08+01:00">2023-12-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-12-06 10:48:18" itemprop="dateModified" datetime="2023-12-06T10:48:18+01:00">2023-12-06</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>工欲善其事必先從統計起</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/12/02/dairy6/">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
       }
     }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
   }
-
-  // UC不支持跨域，所以直接显示
-  function asyncCb() {
-    if (browser.versions.uc) {
-      console.log('UCBrowser')
-      fontLoaded()
-    } else {
-      WebFont.load({
-        custom: {
-          families: ['Oswald-Regular'],
-        },
-        loading: function () {
-          // 所有字体开始加载
-          // console.log('font loading');
-        },
-        active: function () {
-          // 所有字体已渲染
-          fontLoaded()
-        },
-        inactive: function () {
-          // 字体预加载失败，无效字体或浏览器不支持加载
-          console.log('inactive: timeout')
-          fontLoaded()
-        },
-        timeout: 5000, // Set the timeout to two seconds
-      })
-    }
-  }
-
-  function asyncErr() {
-    console.warn('script load from CDN failed, will load local script')
-  }
-
-  // load webfont-loader async, and add callback function
-  function async(u, cb, err) {
-    var d = document,
-      t = 'script',
-      o = d.createElement(t),
-      s = d.getElementsByTagName(t)[0]
-    o.src = u
-    if (cb) {
-      o.addEventListener(
-        'load',
-        function (e) {
-          cb(null, e)
-        },
-        false
-      )
-    }
-    if (err) {
-      o.addEventListener(
-        'error',
-        function (e) {
-          err(null, e)
-        },
-        false
-      )
-    }
-    s.parentNode.insertBefore(o, s)
-  }
-
-  var asyncLoadWithFallBack = function (arr, success, reject) {
-    var currReject = function () {
-      reject()
-      arr.shift()
-      if (arr.length) async(arr[0], success, currReject)
-    }
-
-    async(arr[0], success, currReject)
-  }
-
-  asyncLoadWithFallBack(
-    [
-      'https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js',
-      'https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js',
-      "/lib/webfontloader.min.js",
-    ],
-    asyncCb,
-    asyncErr
-  )
 </script>
 
-            <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
-            <div class="container container-unloaded">
-                <main class="main index-page">
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/12/06/amysterybox-8/">
-                
-                <span class="abstract-title-text">古原original character</span>
-            </a>
-            <div class="abstract-content">
-                喜悲苦乐，恩仇爱恨，曾执迷过才能不再执迷，曾舍不得才能全数舍得。冯砚的一举一动都在眼前次第浮现，手谈之际眼角的笑影，情热时泛红的耳垂，一幕幕流畅不滞，纤若毫发。他年少入主剑阁，读书习武，参悟剑道，同冯砚少有分离，那是上天厚待。而他少时自诩一心向道，人间风月无啻尘土，而今水去云回，那些赤子冰心的，年少疏狂的，天真爱悦的，全部相会无期。谢潮来阖住双目，涩然笑了一声，掌中利器作阵阵嗡鸣，峭壁之下，剑意催发，气劲与山风争相鼓荡起袍袖。——不曾出口的白首之盟，今日已践。他陡然睁开眼，光华流转，威势凛然，面北从容地拜了一拜，随之洒然步向石崖，再不回顾。冯砚那一天醒得格外早，自昨日从谢潮来房间辞别出来...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/12/06">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/12/06</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="亦有人造訪過這片原野">亦有人造訪過這片原野</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/12/06/amysterybox-7/">
-                
-                <span class="abstract-title-text">伪装者/台风</span>
-            </a>
-            <div class="abstract-content">
-                《学生》我只知道老师姓王，而且连这也有可能是假的。“任务开始，一步一刀锋，掉下去的都是轻信的人，所以……不要相信任何人，也不要相信别人想让你看见的事。”“只能信自己？” 柑橘放烂了，剥皮时汁液流了我满手，我一边去揩，一边笑着问他。“自己也不可信。” 老师的眼睛像一泓寒潭，平静、冰冷，还有不可言喻的悲哀。
-到了今天，我认为自己算是领会了他的意思。受一次敌人的严刑审讯，就被剥去一层皮，战友的背叛又剥去一层，血肉模糊的，半只脚迈进鬼门关，又收回来。有时我靠着藤椅睡过去，突然打一个激灵，又满头冷汗地醒来。直面过黑洞洞的枪口，架在颈根上的利刃；和特高科作生死一线的周旋，最险是那次落入汪伪政府76号...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/12/06">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/12/06</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="亦有人造訪過這片原野">亦有人造訪過這片原野</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/12/06/amysterybox-6/">
-                
-                <span class="abstract-title-text">金光佈袋戲/風千風</span>
-            </a>
-            <div class="abstract-content">
-                《镖客》
- 一行人在门口有短暂的迟疑，最后仍旧走进了这间单人病房，尽管房间里充满刺鼻的消毒水和薄荷烟混合的奇怪味道。下午的阳光很好，晒得四周暖洋洋的，光线从窗口错落地照进来，空气中浮着一层迟钝的睡意。风逍遥坐在窗台上，两条腿懒散地拖着，自始至终没有抬一下眼，他正专心致志地看远处的一座钟楼，两根手指间夹一根快要烧尽的烟。这是一座湿润的城市，尽管阳光普照，人们呼吸的空气中仍内含饱满的水汽，视线因此变得模糊而且朦胧，那座钟楼也变得湿乎乎的，仿佛它正在融化，像雪水那样淅淅沥沥地向下滴着。金黄色的雪水。
-房间里出现片刻缄默，检察署的人相互看着，终于有人清清嗓子，平板地宣布：“浪飘萍先生，你的不在场...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/12/06">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/12/06</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="亦有人造訪過這片原野">亦有人造訪過這片原野</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/12/06/amysterybox-5/">
-                
-                <span class="abstract-title-text">JOJO的奇妙冒险/承花承</span>
-            </a>
-            <div class="abstract-content">
-                Where does this ocean go?
-享有盛誉的大航海家空条承太郎在十七岁初次踏上甲板时，就已经展露了非同一般的冷静与决断力，尽管那时候他只是不名一文的年轻船员，面孔青涩、整理桅杆的动作笨拙，可他的血亲、来自大不列颠的探险家乔瑟夫·乔斯达彼时断言：他天生有着一种冷酷的天赋，懂得不让感情左右自己的决断，看着他的眼睛，我就知道他将来会成为伟大的航海家。承太郎的海上生涯相当顺利，这不代表他没有遇到过什么大规模的风暴，实际上，他遇到过很多起，并先后征服了它们。这个男人命中注定要成为乘风破浪的传说，他勇于在险境中执掌船舵，以不差毫厘的姿态从风暴眼中穿出，在足以把一个人全身骨头都打碎的...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/12/06">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/12/06</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="亦有人造訪過這片原野">亦有人造訪過這片原野</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/12/06/amysterybox-4/">
-                
-                <span class="abstract-title-text">古原人设/original character</span>
-            </a>
-            <div class="abstract-content">
-                （1）钟秀，无字，凉州人。麦色皮肤，颀健英拔。容色轻佻，惯以笑脸示人，偏生一副沉毅冷峻的骨相。先前在龙门荒漠走镖，使一柄刀身修窄的五尺长刃，颇类苗刀形制，尤善辗转连击，身摧刀往，刀随人转，疾速凌厉。刃口弧度似女子妆罢淡扫的眉弓，乃亲昵唤刀为“柳眉”。后攒辗转南下定居水乡，散尽川资盘下小店开面馆。傍身的“柳眉”换了一双藏在襟里的蝴蝶双刀，刃口银亮，薄如蝉翼，左唤“樱桃”、右名“小梨”。青绦酒旗飘飘摇摇，外间雨打青荷，室内暖意升腾，一口小砂锅慢炖肥瘦得当的羊肉块。汤头浓厚，细韧雪洁的面条烫到断生，葱丝鲜甜，菜码水灵，煸的红亮的辣椒油当头一浇，微浮油花。 生意做得随心所欲，譬如常以羊杂汤相赠行...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/12/06">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/12/06</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="亦有人造訪過這片原野">亦有人造訪過這片原野</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/12/06/amysterybox-3/">
-                
-                <span class="abstract-title-text">哈利波特/犬狼犬</span>
-            </a>
-            <div class="abstract-content">
-                《十二次审讯和一个误会》
-天狼星的余生中都坚称他所认识的L是一位克格勃特工，尽管他言之凿凿地描述了很多事，每一次会面的细节都和事实相符，MI5就快要相信他这个版本的故事时，发觉所有的描述都缺失了最重要的一环，那就是L本人。L不是一阵风或者一缕雾气，按照天狼星的说法，他是一位经验老道的特工，负责执行暗杀任务，推测他的权限相当之高，同时有一个摆在明面的使馆翻译身份，也许是为接近目标提供方便。这样的人是MI5的活靶子，只要他在社交场合公开地露过面，与外交官员们有过两次正式或私下里的交谈记录，他们一定会对这个人留有记录，再老道的猎人也会在雪原里留下几枚脚印，而不是像L一样彻底消失无踪。有几次MI...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/12/06">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/12/06</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="亦有人造訪過這片原野">亦有人造訪過這片原野</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/12/06/amysterybox-2/">
-                
-                <span class="abstract-title-text">龙族/源楚源</span>
-            </a>
-            <div class="abstract-content">
-                楚子航听雨时，源稚生也听雨。雨下得很大，把廊前的草木濯洗成鲜浓的深绿，楚子航和源稚生在一斗暗室内相对而坐，背影挺拔如松，膝前横陈两把古刀。他们之间本就没有很多话说，何况该讲的话已经讲完，所以源稚生只是适时地沉默，让雨声填补那些流荡的空白。线香燃去半数，庭院里的添水咚地敲响一声，源稚生忽然说：“日本的俳句里写过‘我庭小草复萌发，无限天地行将绿’，中国人怎样形容这样的意境？”楚子航想了想：“我不知道。”不知道也是一个答案，源稚生点了点头，为他斟酒。酒是清酒，第一口往往甘甜清爽，要咽进喉咙才能觉出后劲，这是源稚生选的酒。楚子航稳稳持着那只酒杯，并没有喝，他没有想象过源稚生挑选酒的样子，更没有想...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/12/06">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/12/06</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="亦有人造訪過這片原野">亦有人造訪過這片原野</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/12/06/amysterybox-1/">
-                
-                <span class="abstract-title-text">逆水寒/戚少商个人</span>
-            </a>
-            <div class="abstract-content">
-                《烧烤》
-戚少商在吃烤串。不管他隔桌的人怎么划拳、呐喊、碰杯，戚少商只是闷头苦吃，这也是有原因的：一则因为没有人与他碰杯，又一则因为他只有一条胳膊。只要他去端酒杯、或者与人划拳，那么就留不出一只手再去拿羊肉串，而戚少商真的只是来吃烤串的。他坐的烧烤摊和广东最大的酒楼之隔一条马路，车辆往来络绎不绝，戚少商不仅知道这所酒楼，还曾和此间的客家老板称兄道弟，因为他年轻时无数次地出入这里——和他的七位把兄弟，日复一日聚在里面喝酒、赌博、闹是非、争选举。天网恢恢，而他脚下方寸是法外之地，那时湖广两粤，一切大的生意都要在这里拍板，请“龙头”定夺。酒楼的大堂里突然爆发出一阵喧哗，一群人推推搡搡地向外移动...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/12/06">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/12/06</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="亦有人造訪過這片原野">亦有人造訪過這片原野</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/12/02/dairy7/">
-                
-                <span class="abstract-title-text">And then she smiled</span>
-            </a>
-            <div class="abstract-content">
-                我和禹写了一二三四五六七，天啊，整整七年的交换日记。因为换了新设备忘记密码，太久没登录账号锁死，没有任何一件事终止这日记的进程，然而我们又不大相约出门，很少聊天，不一起打游戏，在彼此的生活里缺席，在朋友圈里失语。这几乎是一种搏击俱乐部式的关系，终于有一天她醒过来会发现狮子并不存在，历时七年的数据在手背上冷冷地爬过，都是同一个人头脑里的自白。我像她理想中一样顺风顺水，而且从未和日常生活脱轨，而她像我理想中一样，自由。
-如果我没有实体就好了！我会像康纳一样被当胸击中，被一枪爆头，热血像港片一样飞溅在街头，但是第二天我会淡淡地回到原地，就像什么事都没有发生过。而且当我不想存在的时候，我可以从未...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/12/06">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/12/02</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="索拉里斯香蕉纪年">索拉里斯香蕉纪年</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/12/02/dairy6/">
-                
-                <span class="abstract-title-text">从0开始的异世界机器学习生活（1）</span>
-            </a>
-            <div class="abstract-content">
-                那一刻我终于认识到我的人生要和他人的区别开！
-11月不知道几号的学习笔记：The distribution of SAT scores for anthropology majors is approximately normal. For normal distributions, the standard deviation is a good measure of spread.For flat distributions, like the scores of economics majors, the standard deviation is not a good measu...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/12/06">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/12/02</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="太阳黑子和克拉拉">太阳黑子和克拉拉</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-    <!-- paginator  -->
-    
-        <nav class="page-nav">
-            <a class="extend prev" rel="prev" href="/">&lt; PREV</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">NEXT &gt;</a>
-        </nav>
-    
-</main>
-
-                <!-- profile -->
-                
-                    <div class="profile">
-    <img class="profile-avatar" alt="avatar" src= /avatar/Misaka.jpg />
-    <div class="profile-name">fi3ework</div>
-    
-        <div class="profile-signature">
-            witness me
         </div>
-    
-    
-        <div class="profile-social">
-            
-    
-        
-            
-                <a href="mailto:12345@qq.com" class="iconfont-archer email" title=email ></a>
-            
-        
-    
-        
-            
-                <a href="//github.com/fi3ework" class="iconfont-archer github" target="_blank" title=github></a>
-            
-        
-    
-        
-            
-                <span class="iconfont-archer wechat" title=wechat>
-                    
-                    <img class="profile-qr" src="/assets/example_qr.png" />
-                </span>
-            
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
 
+  <aside class="sidebar">
+    <div class="sidebar-inner">
 
-        </div>
-    
-    
-    
-        <div class="profile-link-item">
-            <a href="/about" class="about-me">
-                
-                ABOUT ME
-            </a>
-        </div>
-    
-    
-    
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">FLUFFY LION</p>
+  <div class="site-description" itemprop="description">北京→柏林 经济舱</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
 </div>
 
-                
-            </div>
-            <footer class="footer footer-unloaded">
-    <!-- social  -->
-    
-        <div class="social">
-            
-    
-        
-            
-                <a href="mailto:12345@qq.com" class="iconfont-archer email" title=email ></a>
-            
-        
-    
-        
-            
-                <a href="//github.com/fi3ework" class="iconfont-archer github" target="_blank" title=github></a>
-            
-        
-    
-        
-            
-                <span class="iconfont-archer wechat" title=wechat>
-                    
-                    <img class="profile-qr" src="/assets/example_qr.png" />
-                </span>
-            
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
 
 
-        </div>
-    
-    <!-- powered by Hexo  -->
-    <div class="copyright">
-        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
-    </div>
-    <!-- website approve for Chinese user -->
-    
-    <!-- 不蒜子  -->
-    
-        <div class="busuanzi-container">
-            
-             
-                <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
-            
-        </div>
-    	
-</footer>
-
-        </div>
-        <!-- toc -->
-        
-        <!-- sidebar -->
-        <div class="sidebar sidebar-hide">
-    <ul class="sidebar-tabs sidebar-tabs-active-0">
-        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
-        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
-        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
-    </ul>
-    <div class="sidebar-content sidebar-content-show-archive">
-        <div class="sidebar-panel-archives">
-    <!-- 在 ejs 中将 archive 按照时间排序 -->
-    
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-    
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-    
-    
-    
-    
-    <div class="total-and-search">
-        <div class="total-archive">
-        Total : 26
-        </div>
-        <!-- search  -->
-        
-    </div>
-    
-    <div class="post-archive">
-    
-        
-            
-            
-            <div class="archive-year"> 2023 </div>
-            <ul class="year-list">
-            
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/12</span>
-            <a class="archive-post-title" href="/2023/12/12/dairy8/">diary</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/11</span>
-            <a class="archive-post-title" href="/2023/12/11/amysterybox-12/">amysterybox</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/11</span>
-            <a class="archive-post-title" href="/2023/12/11/study1/">study1</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span>
-            <a class="archive-post-title" href="/2023/12/09/bartending-record/">bartending record</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span>
-            <a class="archive-post-title" href="/2023/12/09/movies/">movies</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span>
-            <a class="archive-post-title" href="/2023/12/09/game/">要紧的不只是成为一个人</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/06</span>
-            <a class="archive-post-title" href="/2023/12/06/VA-11-HALL-A/">Hexo主题编写随记</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/06</span>
-            <a class="archive-post-title" href="/2023/12/06/amysterybox-10/">ff14/光暗光</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/06</span>
-            <a class="archive-post-title" href="/2023/12/06/amysterybox-2/">龙族/源楚源</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/06</span>
-            <a class="archive-post-title" href="/2023/12/06/amysterybox-11/">咒术回战/五夏五</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/06</span>
-            <a class="archive-post-title" href="/2023/12/06/amysterybox-5/">JOJO的奇妙冒险/承花承</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/06</span>
-            <a class="archive-post-title" href="/2023/12/06/amysterybox-4/">古原人设/original character</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/06</span>
-            <a class="archive-post-title" href="/2023/12/06/amysterybox-3/">哈利波特/犬狼犬</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/06</span>
-            <a class="archive-post-title" href="/2023/12/06/amysterybox-6/">金光佈袋戲/風千風</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/06</span>
-            <a class="archive-post-title" href="/2023/12/06/amysterybox-7/">伪装者/台风</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/06</span>
-            <a class="archive-post-title" href="/2023/12/06/amysterybox-8/">古原original character</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/06</span>
-            <a class="archive-post-title" href="/2023/12/06/amysterybox-9/">我的团长我的团/孟烦了个人向</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/06</span>
-            <a class="archive-post-title" href="/2023/12/06/amysterybox-1/">逆水寒/戚少商个人</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/02</span>
-            <a class="archive-post-title" href="/2023/12/02/dairy6/">从0开始的异世界机器学习生活（1）</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/02</span>
-            <a class="archive-post-title" href="/2023/12/02/dairy7/">And then she smiled</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/05</span>
-            <a class="archive-post-title" href="/2023/10/05/dairy3/">爱人寂寥地出生在1874</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/30</span>
-            <a class="archive-post-title" href="/2023/09/30/dairy2/">假如一天只你共我</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/30</span>
-            <a class="archive-post-title" href="/2023/09/30/dairy5/">To risk everything</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/23</span>
-            <a class="archive-post-title" href="/2023/09/23/dairy4/">肚子饿的时候抬头看星星吧！</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/17</span>
-            <a class="archive-post-title" href="/2023/09/17/aboutfood1/">生存确认</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/16</span>
-            <a class="archive-post-title" href="/2023/09/16/dairy1/">也可以是鱼油纪年</a>
-        </li>
-    
-    </div>
-</div>
-
-        <div class="sidebar-panel-tags">
-    <div class="sidebar-tags-name">
-        
-            <span class="sidebar-tag-name" data-tags="索拉里斯香蕉纪年">
-                <span class="iconfont-archer">&#xe606;</span>
-                索拉里斯香蕉纪年
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="鲁加环游艾欧泽亚美食评测">
-                <span class="iconfont-archer">&#xe606;</span>
-                鲁加环游艾欧泽亚美食评测
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="太阳黑子和克拉拉">
-                <span class="iconfont-archer">&#xe606;</span>
-                太阳黑子和克拉拉
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="亦有人造訪過這片原野">
-                <span class="iconfont-archer">&#xe606;</span>
-                亦有人造訪過這片原野
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="VA-11 HALL-A">
-                <span class="iconfont-archer">&#xe606;</span>
-                VA-11 HALL-A
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="献杯">
-                <span class="iconfont-archer">&#xe606;</span>
-                献杯
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="Dr. Strangelove:How I Learned to Stop Worrying and Love the Bomb">
-                <span class="iconfont-archer">&#xe606;</span>
-                Dr. Strangelove:How I Learned to Stop Worrying and Love the Bomb
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="地は冷たく、空は遠く">
-                <span class="iconfont-archer">&#xe606;</span>
-                地は冷たく、空は遠く
-            </span>
-        
-    </div>
-    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
-    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
-        缺失模块，请参考主题文档进行安装配置：https://github.com/fi3ework/hexo-theme-archer#%E5%AE%89%E8%A3%85%E4%B8%BB%E9%A2%98
-    </div> 
-    <div class="sidebar-tags-list"></div>
-</div>
-
-        <div class="sidebar-panel-categories">
-    <div class="sidebar-categories-name">
-    
-    </div>
-    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
-    <div class="sidebar-categories-list"></div>
-</div>
+      </div>
 
     </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">FLUFFY LION</span>
 </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
 
-        <!-- site-meta -->
-        <script>
-    var siteMetaRoot = "/"
-    if (siteMetaRoot === "undefined") {
-        siteMetaRoot = '/'
-    }
-    var siteMeta = {
-        url: "http://namelessriver.github.com",
-        root: siteMetaRoot,
-        author: "FLUFFY LION"
-    }
-</script>
-
-        <!-- import experimental options here -->
-        <!-- Custom Font -->
+        
 
 
-        <!-- main func -->
-        <script src="/scripts/main.js?v=20211217"></script>
-        <!-- dark mode -->
-        <script src="/scripts/dark.js?v=20211217"></script>
-        <!-- fancybox -->
-        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" defer></script>
-        <!-- algolia -->
-        
-        <!-- busuanzi -->
-        
-            <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
-        
-        <!-- CNZZ -->
-        
-        <!-- async load share.js -->
-        
-        <!-- mermaid -->
-        
-    </body>
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
 </html>

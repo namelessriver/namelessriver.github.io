@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!-- title -->
-
-
-    
-
-<!-- keywords -->
-
-
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="author" content="FLUFFY LION">
-    <meta name="renderer" content="webkit">
-    <meta name="copyright" content="FLUFFY LION">
-    
-        <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
-    
-    <meta name="description" content="北京→柏林 经济舱">
-    <meta name="description" content="北京→柏林 经济舱">
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"namelessriver.github.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="北京→柏林 经济舱">
 <meta property="og:type" content="website">
 <meta property="og:title" content="鱼油纪年">
 <meta property="og:url" content="http://namelessriver.github.com/archives/index.html">
@@ -29,2004 +30,818 @@
 <meta property="article:author" content="FLUFFY LION">
 <meta property="article:tag" content="夜航船，日记，做饭记录">
 <meta name="twitter:card" content="summary">
-    <meta http-equiv="Cache-control" content="no-cache">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <link rel="icon" href="/assets/favicon.ico">
-    
-    <title>fi3ework&#39;s Studio</title>
-    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
-/* This file is meant as a standalone workflow for
-- testing support for link[rel=preload]
-- enabling async CSS loading in browsers that do not support rel=preload
-- applying rel preload css once loaded, whether supported or not.
-*/ -->
-<script>
-    (function (w) {
-        'use strict'
-        // rel=preload support test
-        if (!w.loadCSS) {
-            w.loadCSS = function () {}
-        }
-        // define on the loadCSS obj
-        var rp = (loadCSS.relpreload = {})
-        // rel=preload feature support test
-        // runs once and returns a function for compat purposes
-        rp.support = (function () {
-            var ret
-            try {
-                ret = w.document.createElement('link').relList.supports('preload')
-            } catch (e) {
-                ret = false
-            }
-            return function () {
-                return ret
-            }
-        })()
 
-        // if preload isn't supported, get an asynchronous load by using a non-matching media attribute
-        // then change that media back to its intended value on load
-        rp.bindMediaToggle = function (link) {
-            // remember existing media attr for ultimate state, or default to 'all'
-            var finalMedia = link.media || 'all'
+<link rel="canonical" href="http://namelessriver.github.com/archives/">
 
-            function enableStylesheet() {
-                link.media = finalMedia
-            }
 
-            // bind load handlers to enable media
-            if (link.addEventListener) {
-                link.addEventListener('load', enableStylesheet)
-            } else if (link.attachEvent) {
-                link.attachEvent('onload', enableStylesheet)
-            }
-
-            // Set rel and non-applicable media type to start an async request
-            // note: timeout allows this to happen async to let rendering continue in IE
-            setTimeout(function () {
-                link.rel = 'stylesheet'
-                link.media = 'only x'
-            })
-            // also enable media after 3 seconds,
-            // which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
-            setTimeout(enableStylesheet, 3000)
-        }
-
-        // loop through link elements in DOM
-        rp.poly = function () {
-            // double check this to prevent external calls from running
-            if (rp.support()) {
-                return
-            }
-            var links = w.document.getElementsByTagName('link')
-            for (var i = 0; i < links.length; i++) {
-                var link = links[i]
-                // qualify links to those with rel=preload and as=style attrs
-                if (
-                    link.rel === 'preload' &&
-                    link.getAttribute('as') === 'style' &&
-                    !link.getAttribute('data-loadcss')
-                ) {
-                    // prevent rerunning on link
-                    link.setAttribute('data-loadcss', true)
-                    // bind listeners to toggle media back
-                    rp.bindMediaToggle(link)
-                }
-            }
-        }
-
-        // if unsupported, run the polyfill
-        if (!rp.support()) {
-            // run once at least
-            rp.poly()
-
-            // rerun poly on an interval until onload
-            var run = w.setInterval(rp.poly, 500)
-            if (w.addEventListener) {
-                w.addEventListener('load', function () {
-                    rp.poly()
-                    w.clearInterval(run)
-                })
-            } else if (w.attachEvent) {
-                w.attachEvent('onload', function () {
-                    rp.poly()
-                    w.clearInterval(run)
-                })
-            }
-        }
-
-        // commonjs
-        if (typeof exports !== 'undefined') {
-            exports.loadCSS = loadCSS
-        } else {
-            w.loadCSS = loadCSS
-        }
-    })(typeof global !== 'undefined' ? global : this)
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : false,
+    lang   : 'en'
+  };
 </script>
 
-    <style type="text/css">
-    @font-face {
-        font-family: 'Oswald-Regular';
-        src: url("/font/Oswald-Regular.ttf");
-    }
+  <title>Archive | 鱼油纪年</title>
+  
 
-    body {
-        margin: 0;
-    }
 
-    header,
-    footer,
-    .back-top,
-    .sidebar,
-    .container,
-    .site-intro-meta,
-    .toc-wrapper {
-        display: none;
-    }
 
-    .site-intro {
-        position: relative;
-        z-index: 3;
-        width: 100%;
-        /* height: 50vh; */
-        overflow: hidden;
-    }
 
-    .site-intro-placeholder {
-        position: absolute;
-        z-index: -2;
-        top: 0;
-        left: 0;
-        width: calc(100% + 300px);
-        height: 100%;
-        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
-        background-position: center center;
-        transform: translate3d(-226px, 0, 0);
-        animation: gradient-move 2.5s ease-out 0s infinite;
-    }
 
-    @keyframes gradient-move {
-        0% {
-            transform: translate3d(-226px, 0, 0);
-        }
-        100% {
-            transform: translate3d(0, 0, 0);
-        }
-    }
-</style>
 
-    <link rel="preload" href="/css/style.css?v=20211217" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="/css/dark.css?v=20211217" as="style">
-    <link rel="stylesheet" href="/css/dark.css">
-    <link rel="stylesheet" href="/css/mobile.css?v=20211217" media="(max-width: 960px)">
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" as="script">
-    <link rel="preload" href="/scripts/main.js?v=20211217" as="script">
-    <link rel="preload" href="/scripts/dark.js?v=20211217" as="script">
-    <link rel="preload" href="/font/Oswald-Regular.ttf" as="font" crossorigin>
-    <link rel="preload" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" as="font" crossorigin>
-    <!-- algolia -->
-    
-    <!-- 百度统计  -->
-    
-    <!-- Google tag (gtag.js) -->
-    
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
-<meta name="generator" content="Hexo 6.3.0"></head>
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-    <script type="text/javascript">
-        if (typeof window.$ == undefined) {
-            console.warn('jquery load from jsdelivr failed, will load local script')
-            document.write('<script src="/lib/jquery.min.js" />')
-        }
-    </script>
-    
-        <!-- header -->
-        <header class="header header-mobile">
-    <!-- top read progress line -->
-    <div class="header-element">
-        <div class="read-progress"></div>
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-    <!-- sidebar menu button -->
-    <div class="header-element">
-        
-            <div class="header-sidebar-menu">
-        
-            
-                <div style="padding-left: 1px;">&#xe775;</div>
-            
-        </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">鱼油纪年</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
     </div>
-    <!-- header actions -->
-    <div class="header-actions">
-        <!-- theme mode switch button -->
-        <span class="header-theme-btn header-element">
-            <i class="fas fa-adjust"></i>
-        </span>
-        <!-- back to home page text -->
-        <span class="home-link header-element">
-            <a href=/>fi3ework's Studio.</a>
-        </span>
-    </div>
-    <!-- toggle banner for post layout -->
-    
-</header>
-
-        <!-- fixed footer -->
-        <footer class="footer-fixed">
-    <!-- back to top button -->
-    <div class="footer-fixed-element">
-        
-            <div class="back-top back-top-hidden">
-        
-        
-            <div>&#xe639;</div>
-        
-        </div>
-    </div>
-</footer>
-
-        <!-- wrapper -->
-        <div class="wrapper">
-            <div class="site-intro" style="
-
-
-
-
-
-
-
-">
-    
-    <!-- 主页  -->
-    
-    <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
-    <div class="site-intro-meta">
-        <!-- 标题  -->
-        <h1 class="intro-title">
-            <!-- 主页  -->
-            
-        </h1>
-        <!-- 副标题 -->
-        <p class="intro-subtitle">
-            <!-- 主页副标题  -->
-            
-        </p>
-        <!-- 文章页 meta -->
-        
-    </div>
+  </div>
 </div>
 
-            <script>
-  // get user agent
-  function getBrowserVersions() {
-    var u = window.navigator.userAgent
-    return {
-      userAgent: u,
-      trident: u.indexOf('Trident') > -1, //IE内核
-      presto: u.indexOf('Presto') > -1, //opera内核
-      webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
-      gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
-      mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
-      ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
-      android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
-      iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
-      iPad: u.indexOf('iPad') > -1, //是否为iPad
-      webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
-      weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
-      uc: u.indexOf('UCBrowser') > -1, //是否为android下的UC浏览器
-    }
-  }
-  var browser = {
-    versions: getBrowserVersions(),
-  }
-  console.log('userAgent: ' + browser.versions.userAgent)
 
-  // callback
-  function fontLoaded() {
-    console.log('font loaded')
-    if (document.getElementsByClassName('site-intro-meta')) {
-      document
-        .getElementsByClassName('intro-title')[0]
-        .classList.add('intro-fade-in')
-      document
-        .getElementsByClassName('intro-subtitle')[0]
-        .classList.add('intro-fade-in')
-      var postIntros = document.getElementsByClassName('post-intros')[0]
-      if (postIntros) {
-        postIntros.classList.add('post-fade-in')
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content archive">
+            
+
+  
+  
+  
+  <div class="post-block">
+    <div class="posts-collapse">
+      <div class="collection-title">
+        <span class="collection-header">Um..! 26 posts in total. Keep on posting.</span>
+      </div>
+
+      
+    <div class="collection-year">
+      <span class="collection-header">2023</span>
+    </div>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2023-12-12T13:56:28+01:00"
+              content="2023-12-12">
+          12-12
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2023/12/12/dairy8/" itemprop="url">
+            <span itemprop="name">diary</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2023-12-11T17:50:14+01:00"
+              content="2023-12-11">
+          12-11
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2023/12/11/amysterybox-12/" itemprop="url">
+            <span itemprop="name">amysterybox</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2023-12-11T09:02:46+01:00"
+              content="2023-12-11">
+          12-11
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2023/12/11/study1/" itemprop="url">
+            <span itemprop="name">study1</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2023-12-09T09:34:13+01:00"
+              content="2023-12-09">
+          12-09
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2023/12/09/bartending-record/" itemprop="url">
+            <span itemprop="name">bartending record</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2023-12-09T09:24:28+01:00"
+              content="2023-12-09">
+          12-09
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2023/12/09/movies/" itemprop="url">
+            <span itemprop="name">movies</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2023-12-09T09:20:44+01:00"
+              content="2023-12-09">
+          12-09
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2023/12/09/game/" itemprop="url">
+            <span itemprop="name">要紧的不只是成为一个人</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2023-12-06T22:45:40+01:00"
+              content="2023-12-06">
+          12-06
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2023/12/06/VA-11-HALL-A/" itemprop="url">
+            <span itemprop="name">Hexo主题编写随记</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2023-12-06T17:40:14+01:00"
+              content="2023-12-06">
+          12-06
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2023/12/06/amysterybox-11/" itemprop="url">
+            <span itemprop="name">咒术回战/五夏五</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2023-12-06T17:37:54+01:00"
+              content="2023-12-06">
+          12-06
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2023/12/06/amysterybox-10/" itemprop="url">
+            <span itemprop="name">ff14/光暗光</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2023-12-06T17:35:48+01:00"
+              content="2023-12-06">
+          12-06
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2023/12/06/amysterybox-9/" itemprop="url">
+            <span itemprop="name">我的团长我的团/孟烦了个人向</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2023-12-06T17:32:10+01:00"
+              content="2023-12-06">
+          12-06
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2023/12/06/amysterybox-8/" itemprop="url">
+            <span itemprop="name">古原original character</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2023-12-06T17:28:31+01:00"
+              content="2023-12-06">
+          12-06
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2023/12/06/amysterybox-7/" itemprop="url">
+            <span itemprop="name">伪装者/台风</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2023-12-06T17:24:37+01:00"
+              content="2023-12-06">
+          12-06
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2023/12/06/amysterybox-6/" itemprop="url">
+            <span itemprop="name">金光佈袋戲/風千風</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2023-12-06T17:21:48+01:00"
+              content="2023-12-06">
+          12-06
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2023/12/06/amysterybox-5/" itemprop="url">
+            <span itemprop="name">JOJO的奇妙冒险/承花承</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2023-12-06T17:12:21+01:00"
+              content="2023-12-06">
+          12-06
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2023/12/06/amysterybox-4/" itemprop="url">
+            <span itemprop="name">古原人设/original character</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2023-12-06T17:07:11+01:00"
+              content="2023-12-06">
+          12-06
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2023/12/06/amysterybox-3/" itemprop="url">
+            <span itemprop="name">哈利波特/犬狼犬</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2023-12-06T17:03:21+01:00"
+              content="2023-12-06">
+          12-06
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2023/12/06/amysterybox-2/" itemprop="url">
+            <span itemprop="name">龙族/源楚源</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2023-12-06T16:58:15+01:00"
+              content="2023-12-06">
+          12-06
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2023/12/06/amysterybox-1/" itemprop="url">
+            <span itemprop="name">逆水寒/戚少商个人</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2023-12-02T20:16:54+01:00"
+              content="2023-12-02">
+          12-02
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2023/12/02/dairy7/" itemprop="url">
+            <span itemprop="name">And then she smiled</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2023-12-02T20:10:08+01:00"
+              content="2023-12-02">
+          12-02
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2023/12/02/dairy6/" itemprop="url">
+            <span itemprop="name">从0开始的异世界机器学习生活（1）</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2023-10-05T22:35:39+02:00"
+              content="2023-10-05">
+          10-05
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2023/10/05/dairy3/" itemprop="url">
+            <span itemprop="name">爱人寂寥地出生在1874</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2023-09-30T23:26:09+02:00"
+              content="2023-09-30">
+          09-30
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2023/09/30/dairy2/" itemprop="url">
+            <span itemprop="name">假如一天只你共我</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2023-09-30T23:26:09+02:00"
+              content="2023-09-30">
+          09-30
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2023/09/30/dairy5/" itemprop="url">
+            <span itemprop="name">To risk everything</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2023-09-23T00:05:51+02:00"
+              content="2023-09-23">
+          09-23
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2023/09/23/dairy4/" itemprop="url">
+            <span itemprop="name">肚子饿的时候抬头看星星吧！</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2023-09-17T20:20:11+02:00"
+              content="2023-09-17">
+          09-17
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2023/09/17/aboutfood1/" itemprop="url">
+            <span itemprop="name">生存确认</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2023-09-16T21:02:23+02:00"
+              content="2023-09-16">
+          09-16
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2023/09/16/dairy1/" itemprop="url">
+            <span itemprop="name">也可以是鱼油纪年</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
+
+
+    </div>
+  </div>
+  
+  
+  
+
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
       }
     }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
   }
-
-  // UC不支持跨域，所以直接显示
-  function asyncCb() {
-    if (browser.versions.uc) {
-      console.log('UCBrowser')
-      fontLoaded()
-    } else {
-      WebFont.load({
-        custom: {
-          families: ['Oswald-Regular'],
-        },
-        loading: function () {
-          // 所有字体开始加载
-          // console.log('font loading');
-        },
-        active: function () {
-          // 所有字体已渲染
-          fontLoaded()
-        },
-        inactive: function () {
-          // 字体预加载失败，无效字体或浏览器不支持加载
-          console.log('inactive: timeout')
-          fontLoaded()
-        },
-        timeout: 5000, // Set the timeout to two seconds
-      })
-    }
-  }
-
-  function asyncErr() {
-    console.warn('script load from CDN failed, will load local script')
-  }
-
-  // load webfont-loader async, and add callback function
-  function async(u, cb, err) {
-    var d = document,
-      t = 'script',
-      o = d.createElement(t),
-      s = d.getElementsByTagName(t)[0]
-    o.src = u
-    if (cb) {
-      o.addEventListener(
-        'load',
-        function (e) {
-          cb(null, e)
-        },
-        false
-      )
-    }
-    if (err) {
-      o.addEventListener(
-        'error',
-        function (e) {
-          err(null, e)
-        },
-        false
-      )
-    }
-    s.parentNode.insertBefore(o, s)
-  }
-
-  var asyncLoadWithFallBack = function (arr, success, reject) {
-    var currReject = function () {
-      reject()
-      arr.shift()
-      if (arr.length) async(arr[0], success, currReject)
-    }
-
-    async(arr[0], success, currReject)
-  }
-
-  asyncLoadWithFallBack(
-    [
-      'https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js',
-      'https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js',
-      "/lib/webfontloader.min.js",
-    ],
-    asyncCb,
-    asyncErr
-  )
 </script>
 
-            <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
-            <div class="container container-unloaded">
-                <main class="main index-page">
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/12/12/dairy8/">
-                
-                <span class="abstract-title-text">diary</span>
-            </a>
-            <div class="abstract-content">
-                
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/12/12">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/12/12</span>
-                </div>
-                <!-- tags -->
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/12/11/amysterybox-12/">
-                
-                <span class="abstract-title-text">amysterybox</span>
-            </a>
-            <div class="abstract-content">
-                
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/12/11">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/12/11</span>
-                </div>
-                <!-- tags -->
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/12/11/study1/">
-                
-                <span class="abstract-title-text">study1</span>
-            </a>
-            <div class="abstract-content">
-                
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/12/11">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/12/11</span>
-                </div>
-                <!-- tags -->
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/12/09/bartending-record/">
-                
-                <span class="abstract-title-text">bartending record</span>
-            </a>
-            <div class="abstract-content">
-                献给众人。
-
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/12/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/12/09</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="献杯">献杯</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/12/09/movies/">
-                
-                <span class="abstract-title-text">movies</span>
-            </a>
-            <div class="abstract-content">
-                读书感想和小结（虽然但是可能以后这里很多都是工具书了）。
-
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/12/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/12/09</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Dr. Strangelove:How I Learned to Stop Worrying and Love the Bomb">Dr. Strangelove:How I Learned to Stop Worrying and Love the Bomb</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/12/09/game/">
-                
-                <span class="abstract-title-text">要紧的不只是成为一个人</span>
-            </a>
-            <div class="abstract-content">
-                客官请用《冥府小王子出逃记》，《赛博酒保会梦见仿生奇美拉吗？》和《传奇累赘和他的贴身保镖》。
-
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/12/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/12/09</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="地は冷たく、空は遠く">地は冷たく、空は遠く</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/12/06/VA-11-HALL-A/">
-                
-                <span class="abstract-title-text">Hexo主题编写随记</span>
-            </a>
-            <div class="abstract-content">
-                那么静态博客就算是一波三折地搭建起来了，着实吃了themes里面几个功能不全面主题的苦，目前选择了keep主题作为模版。这一版主题的好处就是内附有详细的说明，内置了主页评论等主要功能可供选择，总之主体架构可靠完整，大部分功能都可以在这个主题的基础上修改实现。弊端是整体风格简约有余大方不足，需要优化主页，也需要自己引入豆瓣的书音影界面。
-1.1 Why Hexo？Hexo是一个基于Node.js的静态网站生成器，它允许我们使用简洁的Markdown或其他标记语言编写内容，并将其转换为静态HTML页面，可以部署到任何支持静态文件的服务器上。这样来说，我们可以使用Markdown等简洁明了的标...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/12/06">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/12/06</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="VA-11 HALL-A">VA-11 HALL-A</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/12/06/amysterybox-11/">
-                
-                <span class="abstract-title-text">咒术回战/五夏五</span>
-            </a>
-            <div class="abstract-content">
-                《不存在的Martilda》
-伏黑甚尔在暴雨的夜里领回来一个小孩，小孩约莫十五六岁的样子，长眉细目，脸色恹恹，长期的营养不良在他身体各处留下痕迹，他的头发被雨给淋透了，纠缠在一起，像深海里的水藻。伏黑甚尔开了门，把湿淋淋的衣服和鞋甩在玄关，赤膊进门，向屋里面吹一声口哨，五条悟就趿拉着拖鞋从自己房间探出半个脑袋，说流浪狗吗你水拧干了再进来，伏黑甚尔置若罔闻，说捡了个玩意回来，说着像对待货物那样推搡小孩一把，小孩就踉踉跄跄被推到了光里——被刺得闭了一下眼睛。五条悟很感兴趣的样子，走过来从头到脚打量小孩，蹲下身和他视线齐平，问他各种问题，小孩还挺犟的样子，把头扭向一边不吭声。五条悟笑眯眯，说你...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/12/06">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/12/06</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="亦有人造訪過這片原野">亦有人造訪過這片原野</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/12/06/amysterybox-10/">
-                
-                <span class="abstract-title-text">ff14/光暗光</span>
-            </a>
-            <div class="abstract-content">
-                
-光顺着雪原攀援到最高点，终于忍不住蹲下来喘几口气。雪原上的空气稀薄，裸露的岩石和植被被雨雪侵蚀，只剩下破碎的沟壑，他竟然在这极偏僻的地方听到镐子有节奏的敲击声。光几乎不需要循着声音寻找，面前开阔的地面几乎没有什么遮蔽物，一座用防水布临时搭建的棚屋，连同一个手持铁镐的男人就这样出现在他眼前。冷风在雪原呼啸，裸露的岩石和荆棘无动于衷，他们像世上仅剩的两只动物遥遥相望。
-你在做什么？光站在近处看了一会儿，终于忍不住开口。
-这是卡罗尔物质席卷世界的第十年，人类文明宣告进入危机纪元。无线电波被扼死在卡罗尔物质形成的卷积云层间，人与人之间的通讯断绝，天穹降落老化的雨水，如果你想试试它的厉害，满可以...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/12/06">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/12/06</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="亦有人造訪過這片原野">亦有人造訪過這片原野</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/12/06/amysterybox-9/">
-                
-                <span class="abstract-title-text">我的团长我的团/孟烦了个人向</span>
-            </a>
-            <div class="abstract-content">
-                孟烦了，AT300交互型仿生人，这一型号批次主要投放向学术研究和教育领域，专业为英语，兼有查找、转译文献，陪练口语等功能。在早晨八点前往南天门旅游教育基地的列车上他被告知，身上有多处电子元件老化以至毁损，主线路有过载可能。孟烦了礼貌地谢绝了送他去维修部的好意，理由是前往南天门的列车两天才有一班。“两天。” 旁边年轻的仿生人重复了一遍。实际上，已经过去了相当久的时间，久到南天门逐渐淡出视野，成为无人问津的旅游教育基地中的一个，久到Cyberlife公司的核心科技取得重大突破，人们开始使用新的时间尺度计算生命，两天只是一个微不足道的瞬间。孟烦了张张嘴，想要解释什么，列车却在此时开始减速进站，...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/12/06">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/12/06</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="亦有人造訪過這片原野">亦有人造訪過這片原野</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/12/06/amysterybox-8/">
-                
-                <span class="abstract-title-text">古原original character</span>
-            </a>
-            <div class="abstract-content">
-                喜悲苦乐，恩仇爱恨，曾执迷过才能不再执迷，曾舍不得才能全数舍得。冯砚的一举一动都在眼前次第浮现，手谈之际眼角的笑影，情热时泛红的耳垂，一幕幕流畅不滞，纤若毫发。他年少入主剑阁，读书习武，参悟剑道，同冯砚少有分离，那是上天厚待。而他少时自诩一心向道，人间风月无啻尘土，而今水去云回，那些赤子冰心的，年少疏狂的，天真爱悦的，全部相会无期。谢潮来阖住双目，涩然笑了一声，掌中利器作阵阵嗡鸣，峭壁之下，剑意催发，气劲与山风争相鼓荡起袍袖。——不曾出口的白首之盟，今日已践。他陡然睁开眼，光华流转，威势凛然，面北从容地拜了一拜，随之洒然步向石崖，再不回顾。冯砚那一天醒得格外早，自昨日从谢潮来房间辞别出来...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/12/06">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/12/06</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="亦有人造訪過這片原野">亦有人造訪過這片原野</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/12/06/amysterybox-7/">
-                
-                <span class="abstract-title-text">伪装者/台风</span>
-            </a>
-            <div class="abstract-content">
-                《学生》我只知道老师姓王，而且连这也有可能是假的。“任务开始，一步一刀锋，掉下去的都是轻信的人，所以……不要相信任何人，也不要相信别人想让你看见的事。”“只能信自己？” 柑橘放烂了，剥皮时汁液流了我满手，我一边去揩，一边笑着问他。“自己也不可信。” 老师的眼睛像一泓寒潭，平静、冰冷，还有不可言喻的悲哀。
-到了今天，我认为自己算是领会了他的意思。受一次敌人的严刑审讯，就被剥去一层皮，战友的背叛又剥去一层，血肉模糊的，半只脚迈进鬼门关，又收回来。有时我靠着藤椅睡过去，突然打一个激灵，又满头冷汗地醒来。直面过黑洞洞的枪口，架在颈根上的利刃；和特高科作生死一线的周旋，最险是那次落入汪伪政府76号...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/12/06">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/12/06</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="亦有人造訪過這片原野">亦有人造訪過這片原野</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/12/06/amysterybox-6/">
-                
-                <span class="abstract-title-text">金光佈袋戲/風千風</span>
-            </a>
-            <div class="abstract-content">
-                《镖客》
- 一行人在门口有短暂的迟疑，最后仍旧走进了这间单人病房，尽管房间里充满刺鼻的消毒水和薄荷烟混合的奇怪味道。下午的阳光很好，晒得四周暖洋洋的，光线从窗口错落地照进来，空气中浮着一层迟钝的睡意。风逍遥坐在窗台上，两条腿懒散地拖着，自始至终没有抬一下眼，他正专心致志地看远处的一座钟楼，两根手指间夹一根快要烧尽的烟。这是一座湿润的城市，尽管阳光普照，人们呼吸的空气中仍内含饱满的水汽，视线因此变得模糊而且朦胧，那座钟楼也变得湿乎乎的，仿佛它正在融化，像雪水那样淅淅沥沥地向下滴着。金黄色的雪水。
-房间里出现片刻缄默，检察署的人相互看着，终于有人清清嗓子，平板地宣布：“浪飘萍先生，你的不在场...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/12/06">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/12/06</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="亦有人造訪過這片原野">亦有人造訪過這片原野</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/12/06/amysterybox-5/">
-                
-                <span class="abstract-title-text">JOJO的奇妙冒险/承花承</span>
-            </a>
-            <div class="abstract-content">
-                Where does this ocean go?
-享有盛誉的大航海家空条承太郎在十七岁初次踏上甲板时，就已经展露了非同一般的冷静与决断力，尽管那时候他只是不名一文的年轻船员，面孔青涩、整理桅杆的动作笨拙，可他的血亲、来自大不列颠的探险家乔瑟夫·乔斯达彼时断言：他天生有着一种冷酷的天赋，懂得不让感情左右自己的决断，看着他的眼睛，我就知道他将来会成为伟大的航海家。承太郎的海上生涯相当顺利，这不代表他没有遇到过什么大规模的风暴，实际上，他遇到过很多起，并先后征服了它们。这个男人命中注定要成为乘风破浪的传说，他勇于在险境中执掌船舵，以不差毫厘的姿态从风暴眼中穿出，在足以把一个人全身骨头都打碎的...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/12/06">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/12/06</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="亦有人造訪過這片原野">亦有人造訪過這片原野</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/12/06/amysterybox-4/">
-                
-                <span class="abstract-title-text">古原人设/original character</span>
-            </a>
-            <div class="abstract-content">
-                （1）钟秀，无字，凉州人。麦色皮肤，颀健英拔。容色轻佻，惯以笑脸示人，偏生一副沉毅冷峻的骨相。先前在龙门荒漠走镖，使一柄刀身修窄的五尺长刃，颇类苗刀形制，尤善辗转连击，身摧刀往，刀随人转，疾速凌厉。刃口弧度似女子妆罢淡扫的眉弓，乃亲昵唤刀为“柳眉”。后攒辗转南下定居水乡，散尽川资盘下小店开面馆。傍身的“柳眉”换了一双藏在襟里的蝴蝶双刀，刃口银亮，薄如蝉翼，左唤“樱桃”、右名“小梨”。青绦酒旗飘飘摇摇，外间雨打青荷，室内暖意升腾，一口小砂锅慢炖肥瘦得当的羊肉块。汤头浓厚，细韧雪洁的面条烫到断生，葱丝鲜甜，菜码水灵，煸的红亮的辣椒油当头一浇，微浮油花。 生意做得随心所欲，譬如常以羊杂汤相赠行...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/12/06">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/12/06</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="亦有人造訪過這片原野">亦有人造訪過這片原野</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/12/06/amysterybox-3/">
-                
-                <span class="abstract-title-text">哈利波特/犬狼犬</span>
-            </a>
-            <div class="abstract-content">
-                《十二次审讯和一个误会》
-天狼星的余生中都坚称他所认识的L是一位克格勃特工，尽管他言之凿凿地描述了很多事，每一次会面的细节都和事实相符，MI5就快要相信他这个版本的故事时，发觉所有的描述都缺失了最重要的一环，那就是L本人。L不是一阵风或者一缕雾气，按照天狼星的说法，他是一位经验老道的特工，负责执行暗杀任务，推测他的权限相当之高，同时有一个摆在明面的使馆翻译身份，也许是为接近目标提供方便。这样的人是MI5的活靶子，只要他在社交场合公开地露过面，与外交官员们有过两次正式或私下里的交谈记录，他们一定会对这个人留有记录，再老道的猎人也会在雪原里留下几枚脚印，而不是像L一样彻底消失无踪。有几次MI...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/12/06">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/12/06</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="亦有人造訪過這片原野">亦有人造訪過這片原野</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/12/06/amysterybox-2/">
-                
-                <span class="abstract-title-text">龙族/源楚源</span>
-            </a>
-            <div class="abstract-content">
-                楚子航听雨时，源稚生也听雨。雨下得很大，把廊前的草木濯洗成鲜浓的深绿，楚子航和源稚生在一斗暗室内相对而坐，背影挺拔如松，膝前横陈两把古刀。他们之间本就没有很多话说，何况该讲的话已经讲完，所以源稚生只是适时地沉默，让雨声填补那些流荡的空白。线香燃去半数，庭院里的添水咚地敲响一声，源稚生忽然说：“日本的俳句里写过‘我庭小草复萌发，无限天地行将绿’，中国人怎样形容这样的意境？”楚子航想了想：“我不知道。”不知道也是一个答案，源稚生点了点头，为他斟酒。酒是清酒，第一口往往甘甜清爽，要咽进喉咙才能觉出后劲，这是源稚生选的酒。楚子航稳稳持着那只酒杯，并没有喝，他没有想象过源稚生挑选酒的样子，更没有想...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/12/06">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/12/06</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="亦有人造訪過這片原野">亦有人造訪過這片原野</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/12/06/amysterybox-1/">
-                
-                <span class="abstract-title-text">逆水寒/戚少商个人</span>
-            </a>
-            <div class="abstract-content">
-                《烧烤》
-戚少商在吃烤串。不管他隔桌的人怎么划拳、呐喊、碰杯，戚少商只是闷头苦吃，这也是有原因的：一则因为没有人与他碰杯，又一则因为他只有一条胳膊。只要他去端酒杯、或者与人划拳，那么就留不出一只手再去拿羊肉串，而戚少商真的只是来吃烤串的。他坐的烧烤摊和广东最大的酒楼之隔一条马路，车辆往来络绎不绝，戚少商不仅知道这所酒楼，还曾和此间的客家老板称兄道弟，因为他年轻时无数次地出入这里——和他的七位把兄弟，日复一日聚在里面喝酒、赌博、闹是非、争选举。天网恢恢，而他脚下方寸是法外之地，那时湖广两粤，一切大的生意都要在这里拍板，请“龙头”定夺。酒楼的大堂里突然爆发出一阵喧哗，一群人推推搡搡地向外移动...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/12/06">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/12/06</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="亦有人造訪過這片原野">亦有人造訪過這片原野</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/12/02/dairy7/">
-                
-                <span class="abstract-title-text">And then she smiled</span>
-            </a>
-            <div class="abstract-content">
-                我和禹写了一二三四五六七，天啊，整整七年的交换日记。因为换了新设备忘记密码，太久没登录账号锁死，没有任何一件事终止这日记的进程，然而我们又不大相约出门，很少聊天，不一起打游戏，在彼此的生活里缺席，在朋友圈里失语。这几乎是一种搏击俱乐部式的关系，终于有一天她醒过来会发现狮子并不存在，历时七年的数据在手背上冷冷地爬过，都是同一个人头脑里的自白。我像她理想中一样顺风顺水，而且从未和日常生活脱轨，而她像我理想中一样，自由。
-如果我没有实体就好了！我会像康纳一样被当胸击中，被一枪爆头，热血像港片一样飞溅在街头，但是第二天我会淡淡地回到原地，就像什么事都没有发生过。而且当我不想存在的时候，我可以从未...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/12/06">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/12/02</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="索拉里斯香蕉纪年">索拉里斯香蕉纪年</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/12/02/dairy6/">
-                
-                <span class="abstract-title-text">从0开始的异世界机器学习生活（1）</span>
-            </a>
-            <div class="abstract-content">
-                那一刻我终于认识到我的人生要和他人的区别开！
-11月不知道几号的学习笔记：The distribution of SAT scores for anthropology majors is approximately normal. For normal distributions, the standard deviation is a good measure of spread.For flat distributions, like the scores of economics majors, the standard deviation is not a good measu...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/12/06">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/12/02</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="太阳黑子和克拉拉">太阳黑子和克拉拉</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/10/05/dairy3/">
-                
-                <span class="abstract-title-text">爱人寂寥地出生在1874</span>
-            </a>
-            <div class="abstract-content">
-                转眼间就56789天没有写博客了，小狮啊小狮，你岂能如此懈怠！（黄豆摇手指.jpg）。起名叫这个标题还是有些惆怅的，昨天跟暧昧了有几个月的小朋友断了，事实上我在真切地写出断了这两个字的时候还是点点悲伤，有那么一个瞬间，我也想过为了避免结束，我要首先避免一切开始才行。这段时间我干了什么呢？首先，作为programming的起步动作，我去找教授争取了读作RA写作洗数据的岗位，同时开始从零自学；我买了新牙膏，买了一大罐身体乳，找到了离家最近的EDEKA，准备了一顿到德国以来最满意的饭，找到了一个月来最满意的香肠，考了第一门试，学会了给电话卡充值，学会了煮米饭和炒菜。我交下了几个朋友，有人一起坐...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/12/06">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/10/05</span>
-                </div>
-                <!-- tags -->
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/09/30/dairy2/">
-                
-                <span class="abstract-title-text">假如一天只你共我</span>
-            </a>
-            <div class="abstract-content">
-                说起来虽然不比国内的六天小长假豪华，但们留德人士也有自己的假期，从周四开始也算实实在在放了四天。最近我在准备后天和教授面谈，所以没有像预想的那样去Wannsee逛跳蚤市场，去Rossmann买了两样化妆品，学着画画眉毛和眼影（眉毛走势画得好烂！），走得最远的路居然是今天晚上去找小丁吃饭和玩猫，唉，好扎实的一顿香香咖喱！
-听了YouTube上三个小时的SQL教程，还要整理一下自己为数不多和python打交道的经历，其实现在我已经有点点困了，也许明天起床再继续datacamp。写到这里小提一下昨天的中秋节，和室友的朋友聚在一起，他们每人出一道菜，我出人吃饭，原来柏林是这样子，也许在欧洲在美国...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/12/06">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/09/30</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="索拉里斯香蕉纪年">索拉里斯香蕉纪年</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/09/30/dairy5/">
-                
-                <span class="abstract-title-text">To risk everything</span>
-            </a>
-            <div class="abstract-content">
-                –He may risk everything.-So why does he decide on racing at the very beginning?-To risk everything.
-亲爱的L，你此刻身在哪里，在做什么，是开心还是伤心？外国人课间碰面总要问一句How are you，不幸的是我总在说一堆后忘了回问and you。
-我还好，只是在品尝一周上四天一天七小时的极致体验，很多信誓旦旦说要学要坚持的东西其实也只是时有时无地出现在生活中，而且因为听力+注意力不集中，一节课的内容其实大抵只能吸收三四成。
-稍感安慰的是德拉贡熬到了这个点在做作业（喂），在美国学语言学的朋友...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/12/02">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/09/30</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="索拉里斯香蕉纪年">索拉里斯香蕉纪年</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/09/23/dairy4/">
-                
-                <span class="abstract-title-text">肚子饿的时候抬头看星星吧！</span>
-            </a>
-            <div class="abstract-content">
-                亲爱的诸君，我对叙述此事已经无能为力，但愿你们生存下来，看到一切，记着一切，并对自己的所作所为从不感到后悔。
-（叹一口很长的气）
-现在是9月23日晚上0：11，概率论只听了四章，又度过了满课的一天，古典模型的应用没听懂，公式推不出来，微积分需要补课，而且optional reading还有大概三四五六十页没读。sorry，我真的只想写下概率论只听了四章的。
-写都写了，添加一点糖分中和一下。我down到了很好的经济学进阶读本；学会了桌上足球怎么玩（一点点）；又见到了那个紫丁香一般的男人（喂）；学校咖啡厅的意大利小哥送了我一个很扎实的甜甜食物；明天要跟朋友家吃饭，逛宜家，晚上去参加中秋晚会；...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/12/06">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/09/23</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="索拉里斯香蕉纪年">索拉里斯香蕉纪年</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/09/17/aboutfood1/">
-                
-                <span class="abstract-title-text">生存确认</span>
-            </a>
-            <div class="abstract-content">
-                预感接下来几天可能不大有空写日记，所以趁周末写勤一点，不过反正这里是我的地盘啦我乐意怎么写就怎么写.jpg
-今天去moviemento看了电影，两场，第一次看的是拍得细碎的实验电影，我一辈子恨实验电影，第二场在看鸡毛掸子的时候短短地流泪了四秒钟，想导演是个年轻的天才，Q＆A环节露面的却是戴着nerd的黑框眼镜笑起来很腼腆的少女。羽毛一样的东西也很好，但最后我还是把票投给了鸡毛掸子，前者是富有技巧收放自如的好，后者则在和你以心换心，我喜欢能抓住人的电影。
-考虑到这边是美食评测来的我也应该多少写两句吃的，偶尔会想这里吃饭真的有什么可供记录吗，无非是换一个地方吃cheese burger酸黄瓜...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/12/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/09/17</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="鲁加环游艾欧泽亚美食评测">鲁加环游艾欧泽亚美食评测</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/09/16/dairy1/">
-                
-                <span class="abstract-title-text">也可以是鱼油纪年</span>
-            </a>
-            <div class="abstract-content">
-                欢迎来到索拉里斯香蕉纪年——为什么是索拉里斯，为什么是香蕉纪年？凤梨纪年可不可以，提子纪年可不可以？OK，没问题，都可以，当我在说“欢迎来到索拉里斯香蕉纪年”时，我想说的不过是“欢迎来到我的赛博客厅”。至于香蕉，who cares about banana? 它曾经是我在物美地超里所能买到最便宜和第二能产生健康联想的水果（第一名是柚子）。事到如今，我已经身在柏林，而香蕉还是香蕉，1.25欧元一串的香蕉，亘古不变的香蕉。如果要细究其中缘由，那么其实是我很怕香蕉变黑，它从边缘开始泛起的黑色斑点，还有日渐成熟过头的甜香气味，两者都让我感到一种和时间赛跑的焦虑。如果你买了香蕉，那么你就对其负有责...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/12/06">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/09/16</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="索拉里斯香蕉纪年">索拉里斯香蕉纪年</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-    <!-- paginator  -->
-    
-</main>
-
-                <!-- profile -->
-                
-            </div>
-            <footer class="footer footer-unloaded">
-    <!-- social  -->
-    
-        <div class="social">
-            
-    
-        
-            
-                <a href="mailto:12345@qq.com" class="iconfont-archer email" title=email ></a>
-            
-        
-    
-        
-            
-                <a href="//github.com/fi3ework" class="iconfont-archer github" target="_blank" title=github></a>
-            
-        
-    
-        
-            
-                <span class="iconfont-archer wechat" title=wechat>
-                    
-                    <img class="profile-qr" src="/assets/example_qr.png" />
-                </span>
-            
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-
-
         </div>
-    
-    <!-- powered by Hexo  -->
-    <div class="copyright">
-        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
-    </div>
-    <!-- website approve for Chinese user -->
-    
-    <!-- 不蒜子  -->
-    
-        <div class="busuanzi-container">
-            
-             
-                <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
-            
-        </div>
-    	
-</footer>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
 
-        </div>
-        <!-- toc -->
-        
-        <!-- sidebar -->
-        <div class="sidebar sidebar-hide">
-    <ul class="sidebar-tabs sidebar-tabs-active-0">
-        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
-        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
-        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
-    </ul>
-    <div class="sidebar-content sidebar-content-show-archive">
-        <div class="sidebar-panel-archives">
-    <!-- 在 ejs 中将 archive 按照时间排序 -->
-    
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-    
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-    
-    
-    
-    
-    <div class="total-and-search">
-        <div class="total-archive">
-        Total : 26
-        </div>
-        <!-- search  -->
-        
-    </div>
-    
-    <div class="post-archive">
-    
-        
-            
-            
-            <div class="archive-year"> 2023 </div>
-            <ul class="year-list">
-            
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/12</span>
-            <a class="archive-post-title" href="/2023/12/12/dairy8/">diary</a>
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
         </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/11</span>
-            <a class="archive-post-title" href="/2023/12/11/amysterybox-12/">amysterybox</a>
+        <li class="sidebar-nav-overview">
+          Overview
         </li>
-    
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">FLUFFY LION</p>
+  <div class="site-description" itemprop="description">北京→柏林 经济舱</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
         
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/11</span>
-            <a class="archive-post-title" href="/2023/12/11/study1/">study1</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span>
-            <a class="archive-post-title" href="/2023/12/09/bartending-record/">bartending record</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span>
-            <a class="archive-post-title" href="/2023/12/09/movies/">movies</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span>
-            <a class="archive-post-title" href="/2023/12/09/game/">要紧的不只是成为一个人</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/06</span>
-            <a class="archive-post-title" href="/2023/12/06/VA-11-HALL-A/">Hexo主题编写随记</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/06</span>
-            <a class="archive-post-title" href="/2023/12/06/amysterybox-10/">ff14/光暗光</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/06</span>
-            <a class="archive-post-title" href="/2023/12/06/amysterybox-2/">龙族/源楚源</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/06</span>
-            <a class="archive-post-title" href="/2023/12/06/amysterybox-11/">咒术回战/五夏五</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/06</span>
-            <a class="archive-post-title" href="/2023/12/06/amysterybox-5/">JOJO的奇妙冒险/承花承</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/06</span>
-            <a class="archive-post-title" href="/2023/12/06/amysterybox-4/">古原人设/original character</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/06</span>
-            <a class="archive-post-title" href="/2023/12/06/amysterybox-3/">哈利波特/犬狼犬</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/06</span>
-            <a class="archive-post-title" href="/2023/12/06/amysterybox-6/">金光佈袋戲/風千風</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/06</span>
-            <a class="archive-post-title" href="/2023/12/06/amysterybox-7/">伪装者/台风</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/06</span>
-            <a class="archive-post-title" href="/2023/12/06/amysterybox-8/">古原original character</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/06</span>
-            <a class="archive-post-title" href="/2023/12/06/amysterybox-9/">我的团长我的团/孟烦了个人向</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/06</span>
-            <a class="archive-post-title" href="/2023/12/06/amysterybox-1/">逆水寒/戚少商个人</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/02</span>
-            <a class="archive-post-title" href="/2023/12/02/dairy6/">从0开始的异世界机器学习生活（1）</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/02</span>
-            <a class="archive-post-title" href="/2023/12/02/dairy7/">And then she smiled</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/05</span>
-            <a class="archive-post-title" href="/2023/10/05/dairy3/">爱人寂寥地出生在1874</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/30</span>
-            <a class="archive-post-title" href="/2023/09/30/dairy2/">假如一天只你共我</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/30</span>
-            <a class="archive-post-title" href="/2023/09/30/dairy5/">To risk everything</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/23</span>
-            <a class="archive-post-title" href="/2023/09/23/dairy4/">肚子饿的时候抬头看星星吧！</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/17</span>
-            <a class="archive-post-title" href="/2023/09/17/aboutfood1/">生存确认</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/16</span>
-            <a class="archive-post-title" href="/2023/09/16/dairy1/">也可以是鱼油纪年</a>
-        </li>
-    
-    </div>
+          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
 </div>
 
-        <div class="sidebar-panel-tags">
-    <div class="sidebar-tags-name">
-        
-            <span class="sidebar-tag-name" data-tags="索拉里斯香蕉纪年">
-                <span class="iconfont-archer">&#xe606;</span>
-                索拉里斯香蕉纪年
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="鲁加环游艾欧泽亚美食评测">
-                <span class="iconfont-archer">&#xe606;</span>
-                鲁加环游艾欧泽亚美食评测
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="太阳黑子和克拉拉">
-                <span class="iconfont-archer">&#xe606;</span>
-                太阳黑子和克拉拉
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="亦有人造訪過這片原野">
-                <span class="iconfont-archer">&#xe606;</span>
-                亦有人造訪過這片原野
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="VA-11 HALL-A">
-                <span class="iconfont-archer">&#xe606;</span>
-                VA-11 HALL-A
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="献杯">
-                <span class="iconfont-archer">&#xe606;</span>
-                献杯
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="Dr. Strangelove:How I Learned to Stop Worrying and Love the Bomb">
-                <span class="iconfont-archer">&#xe606;</span>
-                Dr. Strangelove:How I Learned to Stop Worrying and Love the Bomb
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="地は冷たく、空は遠く">
-                <span class="iconfont-archer">&#xe606;</span>
-                地は冷たく、空は遠く
-            </span>
-        
-    </div>
-    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
-    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
-        缺失模块，请参考主题文档进行安装配置：https://github.com/fi3ework/hexo-theme-archer#%E5%AE%89%E8%A3%85%E4%B8%BB%E9%A2%98
-    </div> 
-    <div class="sidebar-tags-list"></div>
-</div>
 
-        <div class="sidebar-panel-categories">
-    <div class="sidebar-categories-name">
-    
-    </div>
-    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
-    <div class="sidebar-categories-list"></div>
-</div>
+
+      </div>
 
     </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">FLUFFY LION</span>
 </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
 
-        <!-- site-meta -->
-        <script>
-    var siteMetaRoot = "/"
-    if (siteMetaRoot === "undefined") {
-        siteMetaRoot = '/'
-    }
-    var siteMeta = {
-        url: "http://namelessriver.github.com",
-        root: siteMetaRoot,
-        author: "FLUFFY LION"
-    }
-</script>
-
-        <!-- import experimental options here -->
-        <!-- Custom Font -->
+        
 
 
-        <!-- main func -->
-        <script src="/scripts/main.js?v=20211217"></script>
-        <!-- dark mode -->
-        <script src="/scripts/dark.js?v=20211217"></script>
-        <!-- fancybox -->
-        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" defer></script>
-        <!-- algolia -->
-        
-        <!-- busuanzi -->
-        
-            <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
-        
-        <!-- CNZZ -->
-        
-        <!-- async load share.js -->
-        
-        <!-- mermaid -->
-        
-    </body>
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
 </html>
